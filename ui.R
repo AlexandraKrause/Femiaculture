@@ -97,7 +97,7 @@ ui <- dashboardPage(skin =  "purple",
                                   column(10, offset = 1,
                                          tags$strong("The Impact pathway for Empowerment based on an economic assessment."),
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
-                                         img(src = "impact_pathway.jpeg", align ="right",
+                                         img(src = "impact_pathway.jpeg", 
                                              width="400", 
                                              height="300"),# insert image :) src stands for source, url is ok. 
                                          menuItem("Loopy1", icon = icon("pencil-alt"),
