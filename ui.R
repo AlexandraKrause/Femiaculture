@@ -21,7 +21,7 @@ ui <- dashboardPage(skin =  "purple",
                       sidebarMenu(
                         menuItem("Decision analysis basics", tabName = "dashboard", icon = icon("brain",class =NULL, lib="font-awesome" )),
                         menuItem("The project", tabName = "The project", 
-                                   menuSubItem("Model", tabName = "Model", icon = icon("pencil-alt",class =NULL, lib="font-awesome")),
+                                 menuSubItem("Model", tabName = "Model", icon = icon("pencil-alt",class =NULL, lib="font-awesome")),
                                  menuSubItem("Visuals", tabName = "Visuals", icon = icon("seedling",class =NULL, lib="font-awesome" ))
                                  
                         ))
@@ -99,7 +99,7 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$strong("The Impact pathway for Empowerment based on an economic assessment."),
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
                                          img(src = "impact_pathway.png", 
-                                             width="400", 
+                                             width="500", 
                                              height="300"),# insert image :) src stands for source, url is ok. 
                                          menuItem("Loopy1", icon = icon("pencil-alt"),
                                                   href = "https://bit.ly/34gcgaQ"))),
@@ -110,111 +110,131 @@ ui <- dashboardPage(skin =  "purple",
                                   p(" What you see is my first, yet incomplete draft of an impact pathway.  It shows empowernment from an
                                 economic perspective, quantifying each parts in monetary values. It is an universal model that needs to be adapted to 
                                 local needs, actual problems and factors."),  
-                                  tags$code("Changing status Quo"),
-                                  tags$br(tags$br(tags$strong("The first step would be Education, which is a cost factor."))), 
-                                  p("An example for this firstv step would be following: A woman needs to change her time use as an initial step
-                                to get furtehr information on how to change her status quo. Education means Information gathering. An important step to empowerment is the awareness of the current social 
-                                situation of females, especially  within the community and possibilities to better the situation. 
-                                An understanding of what empowernment is or could be is necessary for achieving a more empowered situation for oneself.
-                                Then other themes like nutrition, health, climate change and agricultural practices can be understood from the womens' perspective.
-                                The amount of money payed for
-                                a seminar itself, transportation, internet, electricity
-                                or other factors is calculated here.A very important cost factor for all parts of the model is time: To number the effort, the amount of money she would need to pay for
-                                someone else doing her work (e.g. Child care, field work) is calculated. Many women in agriculture are not payed for their work
-                                and expected to do work long hours. When they are sick, it is hard to find someone who takes their place. This model assumes that
-                                there is a monetary value to this. Even if the work could not be done by somewone else, but the woman later will have to work more,
-                                this number replicates the cost for a time-use change. A beneficial factor might be a social environment that is beneficial wor the female farmer.
-                                Other women from womens' groups who she could share transportation with would be a good example in this case. But throuout the model, help from a
-                                positive enviroment can lower the cost for each step."),
-                                  tags$strong("The next step would be Economy:"),
-                                  p("Economy also means cost like time use or payments for child or eldery care. But it also includes economic gains
-                                  like finding a payed job or an employment on a farm. Asking the husband for payment for her work is also an option. Inforamtion about negotiation otions
-                                  might require investments into education. It could include insurance payments and gains as well as retirement plans. These also could have an effect on 
-                                  health and old-age poverty.
-                                  Also see our", tags$a(href = "https://rpubs.com/Gendergroup/808624", "Gendergroup pension project"),
-                                    "where we observed several pathways for in-married farm wives to achieve money for several pension options.
-                                    It shows vividly, that depending on the local context many different options can be choosen, also depending on 
-                                    inner-household and outer social pressure. It is the farm wive who decides what she would like to do and what options
-                                    would be doable for her in her own individual situation. We also included the case of high inner-household pressure as an option
-                                    to choose the less monetarily valuable, but peace-keeping option of having an own branch on her husband's farm.
-                                    This shows the importance of leaving the decison to the decision-maker and not only observing the economically best outcome."),
-                                  tags$strong("The next step would be Resource allocation:"),
-                                  p("With the money that was gatheredwithin the former step, an allocation of several ressources shouold be possible.
-                                    Trees, livestock, crops (since there can be typical so-called male and female crops), water, breeding achievements (seeds/ 
-                                    livestock),... . Many different ressources like Save working equipment, better nutrition/cooking options
-                                    could also benefit health. Technological resources like handys or radios are also important for further information gathering.
-                                    The money could also be used for children's education.
-                                    Many of these ressource allocations open the way for new startegies against climate change and biodiversity options, which are not seldom
-                                    welcomed by women.It has to be said that many ressource allocations as well as economic allocations depending on the local and individual context can also
-                                    benefit the whole family and might therefore be welcomed by male family members as well. This topic will be further discussed in the", tags$em(" risk section"),
-                                    "below.
-                                    "),
+                                  tags$code("General Overview"),
+                                  p("This is a general impact pathway that is applicable for several local situations. 
+                                    Many examples for  local situations are shown within the mind map, even though it has its boundaries. 
+                                    Depending on the actual decision, some steps might be left out or be varied. "),
                                   tags$code("Sticking to status Quo"),
-                                  tags$br(tags$br(tags$strong("Missing workforce."))),
-                                  p("As visible in the graph, the main obstacles of being not empowered are live threatening.But they are also very much dependent on the local context
-                                  and the choosen local scenario. The level of empowernment can be very different and so is the position of females in families,
-                                  their decision-making power and their right to physical and psychological integrity. Not being empowered in the worst cases
-                                  means the lack of human rights and cuts of these rights can bes seen in various local contexts and ladders of empowernment, as also can be seen in my
-                                  previous group work, the",  tags$a(href = "https://rpubs.com/Gendergroup/808624", "Gendergroup pension project."),
+                                  tags$br(tags$br(tags$strong("Missing workforce - the extra, possible variable"))),
+                                  p("As visible in the graph, the main obstacles of being not empowered are live threatening. But they are also very much dependent on the local context and the chosen local scenario. 
+                                    The level of empowerment can be very different and so is the position of females in families, their decision-making power and their right to physical and psychological integrity. 
+                                    Not being empowered in the worst cases means the lack of human rights and cuts of these rights can be seen in various local contexts and ladders of empowerment, as also can be seen in my previous group work, 
+                                    the ",  tags$a(href = "https://rpubs.com/Gendergroup/808624", "Gendergroup pension project."),
                                     "Unfortunately, assuming that the woman herself has no money for a pension, insurances or health care itself and her husband is not paying for it,
-                                  her health situation is in danger. This obviously also depends on local law and health care provision, but the concept
-                                stays the same.Not being payed for work might lead the way to problems with not having employment protection. Working equipment is
-                                usually not produced or bought specifically for women, multipying the risk of injuries. Health risks can also include chuildren
-                                when they are for example connected with lacks in obsterics. Nutritious problems can affect the health of the whole family. 
-                                Studies show that, depending on the local context, women tend to pay more money for their childrens' education than males.But this can be the
-                                opposite case as well in some localities. Still without economic empowernment, especially girls' education is at risk. Higher education
-                                seems to benefit monetary income. Children not seldom pay for their parents' retirement. With less educated chikdren, the retirement payings might go down 
-                                which might affect health. The access to nutritious food can also be denied by the husabnd, as studies how. This 
-                                can have a direct beneficial effect on a woman's health and workforce. But how to calculate this? The womens' work need to be put in economic values:
-                                Her life-time carying for children, cooking, cleaning, doing agricultural labour. Bad health is directly affecting her ability to work. The amount in which
-                                it is affecting her ability to work differs in local contects and depends on the staus-quo situation. Calculations could include
-                                the amount of accidents during work versus the payments and local usefulness of a health insurance. It could also include
-                                in local contexts often accuring deseases realted to nutritious deficits. Some health insurances keep track about the probabilities of 
-                                incapacity for work. (????google???) Osteoporosis, associated with bone breaking for example hinders the lifting of heavy things (???). Local people
-                                could be able to give numbers of desease occurance and percentages of incapability for work. These values can then be used together with an estimation of the 
-                                worth of female workforce.Obviously under other local conditions and questions, other factors can be included as well. An example: as himmelweit stated,
-                                less economic strenght can lead to women having to use public transportation mor eoften and more attacks against them take place there. These attacks also acn lower
-                                a woman's health."),
+                                    her health situation is in danger. This obviously also depends on local law and health care provision, but the concept stays the same. Not being payed for work might 
+                                    lead the way to problems with not having employment protection. Working equipment is usually not produced or bought specifically for women, multiplying the risk of injuries. 
+                                    Health risks can also include children when they are for example connected with lacks in obstetrics. Nutritious problems can affect the health of the whole family. 
+                                    The access to nutritious food can also be denied by the husband, as studies how. This can have a direct beneficial effect on a woman's health and workforce.
+                                    But how to calculate this? The women's' work needs to be put in economic values: Her lifetime carrying for children, cooking, cleaning and doing agricultural labour.
+                                    Bad health is directly affecting her ability to work. The amount in which it is affecting her ability to work differs in local contexts and depends on the status-quo situation.
+                                    Calculations could include the number of accidents during work versus the payments and local usefulness of a health insurance. It could also include in local contexts often occurring
+                                    diseases related to nutritious deficits. Local people and especially doctors could be able to give numbers of disease occurrence and incapability for work. 
+                                    These values can then be used together with an estimation of the worth of female workforce. Obviously, under other local conditions and questions, other factors can be included
+                                    as well. An example: as himmelweit() stated, less economic strength can lead to women having to use less save options like public transportation more often and more attacks 
+                                    against them take place. 
+                                    These attacks also can lower not only a woman's physical health as well. Depending on the local situation, this might be hard to estimate, though."),
+                                  p("This part of the model therefore can also be a negotiation point with the husband or the male family members since the workforce will be lowered. 
+                                  In these cases where money for obstetrics is missing, not only the woman's health and so her workforce, but also that of further children might be falling away. 
+                                  Also, her earnings (e.g., job away from farm),if there are any, need to be compared the decision-option to change the status-quo."),
                                   p("This part of the model therefore can also be a negotiation point with the husband or the male family members, since the workforce will be lowered.
                                 In these cases where money for obstetrics is missing, not only the woman's health and so her workforce, but also that of further children might be falling away.
                                 Also her earnings, if there are any, need to be compared the decision-option to change the status-quo."),
+                                  p("The Option of sticking to status quo, which is the lower one in the picture, leads down a path of losses. Empowerment as () found can be compared to a ladder: 
+                                  Depending on the situation the woman is in, the situation can be worse or less. But the general disadvantages stay the same. 
+                                  Many studies() state, that women are not payed for their farm work as well as their domestic work (himmelweit). Several studies state, 
+                                  that men share less food with their wives, especially when having one or more other wives after her. 
+                                  This can also be true for the children. It means, that there is less money for these investments than for the Empowerment pathway.
+                                  Another problem is, that men are not paying for their wives retirements and health cares. 
+                                  So, these women have less or no money for these investments. In the end the outcome 
+                                  is ether less money for women's basic needs like food, health care and retirement, other
+                                  resources that are investigated within the local project or more specifically less workforce.
+                                  The last outcome highly depends on the specific question the project would like to answer 
+                                  in its local context. Pro-WEAI measures women's time use by asking them what they do during 
+                                  a day after waking up. Many women find it complicated to see how much work they do during the day.
+                                  But it is possible to measure it and the costs that would need to be payed if someone else would do this work. 
+                                  To estimate the years these costs would need to be payed or how many years 
+                                    the women would be incapable to work I would suggest to either rely on doctor's opinions within local context or use a shiny app slider.
+                                    "),
+                                  tags$code("Changing status Quo"),
+                                  tags$br(tags$br(tags$strong("The first step would be Education, which is a cost factor."))), 
+                                  p("Information about negotiations might require investments into education. In these cases, this step is important. An example for this first step would be following:
+                                  A woman needs to change her time use as an initial step to get further information on how to change her status quo. Education means Information gathering. An important 
+                                  step to empowerment is the awareness of the current social situation of females, especially within the community and possibilities to better the situation. An understanding 
+                                  of what empowerment is or could be is necessary for achieving a more empowered situation for oneself. Then other themes like nutrition, health, climate change and agricultural
+                                  practices can be understood from the women's' perspective. The amount of money payed for a seminar itself, transportation, internet, electricity or other factors is calculated here.
+                                  A very important cost factor for all parts of the model is time: To number the effort, the amount of money she would need to pay for someone else doing her work
+                                  (e.g. Child care, field work) could be calculated. Many women in agriculture are not payed for their work and expected to do work long hours. When they are sick, 
+                                  it is hard to find someone who takes their place. This model assumes that there is a monetary value to this. Even if the work could not be done by someone else, but the woman 
+                                  later will have to work more, this number replicates the cost for a time-use change. A beneficial factor might be a social environment that is beneficial for the female farmer.
+                                  Other women from women's groups who she could share
+                                    transportation with would be a good example in this case. But for all steps of the model, help from a positive environment could lower the cost for each step. "),
+                                  tags$strong("The next step would be Economy:"),
+                                  p("Economy also means costs like time use or payments for child or elderly care. But it also includes economic gains like finding a payed job or an employment on a farm. 
+                                  Asking the husband to pay her for her work is also an option.
+                                  This point could include insurance payments and gains as well as retirement plans. These also could influence health and old-age poverty. 
+                                  Also see our", tags$a(href = "https://rpubs.com/Gendergroup/808624", "Gendergroup pension project"),
+                                    "where we observed several pathways for in-married farm wives to achieve money for several pension options. It shows vividly, that depending on the local
+                                    context many different options should be modelled, depending on inner-household and outer social pressure. We also included the case of high inner-household 
+                                    pressure as an option to choose the less monetarily valuable, but peace-keeping option of having an own branch on her husband's farm. This shows the importance
+                                    of leaving the decision to the decision-maker and not only observing the economically best outcome. It is the farm wife who decides what she would like to do and
+                                    what options would be doable for her in her own individual situation. 
+                                    In case the study is done with a group of women a shiny app with sliders might be helpful for a single woman to adapt the model for her own situation."),
+                                  tags$strong("The next step would be Resource allocation:"),
+                                  p("With the money that was gathered within the former step, an allocation of several resources should be possible. Trees, livestock, crops (since there can be typical
+                                  so-called male and female crops), water, breeding achievements (seeds/ livestock), ... . If the option of sticking to status quo includes 
+                                  the parts named food and health care/retirement, these also need to be included here to compare the monetary values to each other. Many different resources
+                                  like save working equipment, better nutrition/cooking options could also benefit health. Technological resources like mobile phones or radios are also important 
+                                  for further information gathering. The money could also be used for children's education. Many of these resource allocations open the way for new strategies against 
+                                  climate change and biodiversity options, which are not seldom welcomed by women. It must be said that many resource allocations as well as economic allocations depending 
+                                  on the local and individual context can also benefit the whole family and might therefore be welcomed by male family members as well. 
+                                    This topic will be further discussed in the", tags$em(" risk section"),
+                                    "below.
+                                    "),
+                                  tags$code("The social Environmnet"),
+                                  p("The Social environment is affecting all steps of the model as cost reducers.
+                                  Its negative form, a problematic social environment is incorporated as several options to choose from (see the Economic section down below) or as a risk."),
                                   tags$code("The decision's riskiness"),
                                   tags$br(tags$br(tags$strong("The Stop Point"))),
-                                  p("A problematic social environment, in which problematic behaviour towards women is accepted or praised and victims are blaimed or
-                                            strong backlash exists can also strenghen problematic inner-household dynamics and masculinities.
-                                            These can lead as well as the to problematic behaviour itself to safety issues. Safety issue have a negative effect on menatl and physical health,
-                                            possibly even causing death. This decision's riskiness is therefore called", tags$strong("safety."),
-                                    "It should not be a moral question for a scientist to advice a woman on bettering her economic status if this could harm her. But the scientist should not
-                                    decide on this so called stop for the decision maker. Every woman should have the possibility to decide wether or not she wants to change her situation.
-                                    So wether or not this risk occurs, the model puts out a binominal distribution of 0/1. The model so to say stops when the decision maker sees the process as too dangerous.
-                                    Various studies show that economic strengh can lead to backlash and inner-household peace can be disturbed. If mental and physical safety can still be guarnteed in a dform
-                                    the decision maker conforms with, options of less strong economic benefit and ressource allocations can be decided on as the", tags$em("Economy"), "part of
-                                    the text shows. It is the decision maker herself who should decide wether another option would be possible or not.
-                                    What should be marked in this context is, that also the option to stick to a status quo also could lead to health risks, since they are a major issue here.")
-                                )),
-                      # forth tab content
-                      tabItem(tabName = "Visuals",
-                              h3("Visuals"),
-                              box(
-                                title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
-                                width = 12,
-                                column(10, offset = 1,
-                                       tags$strong("The mind map, on which the impact pathway is based"),
-                                       img(src = "Empowerment_Mindmap.png", align ="right",
-                                          width="1100", 
-                                          height="600"))),# insert image :) src stands for source, url is ok. 
-                                       box(
-                                         title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
-                                         width = 12,
-                                         column(10, offset = 1,
-                                       
-                                       tags$br(tags$strong("The Mind map for finding the risk called safety")),
-                                       img(src = "riskmap.png",
-                                           width="400", 
-                                           height="300"),# insert image :) src stands for source, url is ok. 
-           ))
-                              
-                      ))
-))
-                    
+                                  p(" A problematic social environment, in which problematic behaviour towards women is accepted or praised and victims are blamed,
+                                  or strong backlash exists, can also strengthen problematic inner-household dynamics and masculinities. 
+                                  These can lead as well as the problematic behaviour itself to safety issues. Safety issue have a negative effect on
+                                  mental and physical health, possibly even causing death. This decision's riskiness is therefore called",
+                                    tags$strong("safety"),
+                                    "It should not be a moral question for a scientist to advice a woman on bettering her economic status if this could harm her.
+                                  But the scientist should not decide on this so-called stop for the decision maker. Every woman should have the possibility to
+                                  decide whether she wants to change her situation. So, whether this risk occurs, the model puts out a binominal distribution of 0/1.
+                                  The model so to say stops when the decision maker sees the process as too dangerous. Various studies show that economic strength 
+                                  can lead to backlash and inner-household peace can be disturbed. If mental and physical safety can still be guaranteed in a form the
+                                  decision maker conforms with, options of less strong economic benefit and resource allocations can be decided on as the",
+                                    tags$em("Economy"), 
+                                    "of the text shows. It is the decision maker herself who should decide whether another option would be possible or not. What should be 
+                                  marked in this context is, that also the option to stick to a status quo also could lead to health risks, since they are a major issue here." 
+                                    ,
+                                    
+                                  ))),
+                        # forth tab content
+                        tabItem(tabName = "Visuals",
+                                h3("Visuals"),
+                                box(
+                                  title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
+                                  width = 12,
+                                  column(10, offset = 1,
+                                         tags$strong("The mind map, on which the impact pathway is based"),
+                                         img(src = "Empowerment_Mindmap.png", align ="right",
+                                             width="1100", 
+                                             height="600"))),# insert image :) src stands for source, url is ok. 
+                                box(
+                                  title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
+                                  width = 12,
+                                  column(10, offset = 1,
+                                         
+                                         tags$br(tags$strong("The Mind map for finding the risk called safety")),
+                                         img(src = "riskmap.png",
+                                             width="400", 
+                                             height="300"),# insert image :) src stands for source, url is ok. 
+                                  ))
+                                
+                        ))
+                    ))
+
 
