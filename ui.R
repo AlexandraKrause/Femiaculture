@@ -8,8 +8,9 @@ library(tidyverse)
 library(ggplot2)
 library(plyr)
 library(dplyr)
+#not necessary to download!!!:
 #install.packages("easystats", repos = "https://easystats.r-universe.dev")
-library(easystats)
+#library(easystats)
 
 
 
