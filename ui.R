@@ -162,8 +162,7 @@ ui <- dashboardPage(skin =  "purple",
                                   tags$strong("The next step would be Economy:"),
                                   p("The economy part of the model also means costs like time use or child or elderly care payments.
                                     But it also includes economic gains like finding a paid job or employment on a farm. Asking the husband
-                                    to pay her for her work is also an option. This point could include insurance payments and gains as well 
-                                    as retirement plans. These also could influence health and old-age poverty. Also, see our Gendergroup pension project,
+                                    to pay her for her work is also an option. Also, see our Gendergroup pension project,
                                     where we observed several pathways for in-married farm wives to achieve money for several pension options. It shows vividly
                                     that depending on the local context, many different options should be modeled, depending on inner-household and external social pressure.
                                     We also included the case of high inner-household pressure as an option to choose the less monetarily valuable but peace-keeping option 
@@ -176,7 +175,8 @@ ui <- dashboardPage(skin =  "purple",
                                     an allocation of several resources should be possible. Trees, livestock, crops 
                                     (since there can be typical so-called male and female crops), water, breeding achievements 
                                     (seeds/ livestock), ... . If the option of sticking to the status quo includes the parts named food and health care/retirement,
-                                    these also need to be included in here to compare the monetary values to each other. Many different resources like saving working
+                                    these also need to be included in here to compare the monetary values to each other. This point could include insurance payments and gains as well 
+                                    as retirement plans. These also could influence health and old-age poverty. Many different resources like saving working
                                     equipment better nutrition/cooking options could also benefit health. Technological resources like mobile phones or radios are also
                                     crucial for further information gathering. The money could also be used for children's education. Many of these resource allocations
                                     open the way for new strategies against climate change and biodiversity options, which are not seldom welcomed by women. If food and 
@@ -187,7 +187,7 @@ ui <- dashboardPage(skin =  "purple",
                                     "),
                                   tags$code("The social Environmnet"),
                                   p("is affecting all steps of the model as cost reducers. In its negative form, a complex social environment 
-                                    is incorporated as several options to choose from (see the Economic section down below) or as a risk."),
+                                    is incorporated as several options to choose from (see the Economic section) or as a risk."),
                                   tags$br(tags$br(tags$strong("The Stop Point"))),
                                   p(" A problematic social environment in which complex behavior towards women is accepted or praised and victims are blamed,
                                     or strong backlash exists, can also strengthen problematic inner-household dynamics and masculinities. These can lead as well
