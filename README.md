@@ -15,5 +15,7 @@ for participants
 for analphabets
 for other projects
 
-... through a mobile phone app
+through a mobile phone app
+
+
 
