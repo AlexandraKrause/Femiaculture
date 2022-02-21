@@ -1,4 +1,19 @@
 # Femiaculture
-Shiny app for my master thesis
-11.02.: I changed the text, so it should be better to understand now. Sources are still missing.
-The impact pathway picture now also is clearer I hope, since I also visualised the "other" resources I was addressing in the text
+During my thesis I will research factors influencing rural farm women’s empowerment in agricultural development.
+Within this master thesis, I will apply literature research and a decision analysis to assess the unequal resource distribution between male and female farmers and evaluate how gender can be captured in modeling efforts.
+
+The "Femiaculture" Shiny app has following purposes:
+
+A) Show process to scientists
+B) Communicate with supervisors
+C) Present results to scientists in the end
+
+and furthermore depending on situation also include accessibility …
+
+for farm women 
+for participants
+for analphabets
+for other projects
+
+... through a mobile phone app
+
