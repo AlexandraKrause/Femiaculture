@@ -116,7 +116,7 @@ ui <- dashboardPage(skin =  "purple",
                                   title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                   width = 12,
                                   tags$code("General Overview"),
-                                  p(" During my thesis I will research factors influencing rural farm women's empowerment in agricultural development.
+                                  p(" During my thesis, I will research factors influencing rural farm women's empowerment in agricultural development.
                                   Within this master thesis, I will apply literature research and a decision analysis to assess the unequal
                                   resource distribution between male and female farmers and evaluate how gender can be captured in modeling efforts.
                                   Women contribute not only to farm work, they are also often the primary providers of care for children and elderly family members
@@ -307,7 +307,7 @@ ui <- dashboardPage(skin =  "purple",
                                   title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                   width = 12, align ="center",
                                   column(10, offset = 1,
-                                         img(src = "Empowernment_mindmap-only-agriculture.png", align ="right",
+                                         img(src = "Empowernment_mindmap-only-agriculture.png",
                                              width="800", 
                                              height="516"))),
                                 box(
