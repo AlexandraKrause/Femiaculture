@@ -109,8 +109,9 @@ ui <- dashboardPage(skin =  "purple",
                                          img(src = "impact_pathway.png", 
                                              width="600", 
                                              height="339"),# insert image :) src stands for source, url is ok. 
-                                         menuItem("Loopy1", icon = icon("pencil-alt"),
-                                                  href = "https://bit.ly/34gcgaQ"))),
+                                         #menuItem("Loopy1", icon = icon("pencil-alt"),
+                                         #         href = "https://bit.ly/34gcgaQ")
+                                         )),
                                 
                                 box(
                                   title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
