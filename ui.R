@@ -296,11 +296,12 @@ ui <- dashboardPage(skin =  "purple",
                                   column(10, offset = 1,
                                          tags$strong("The mind map, on which the impact pathway is based.",
                                          tags$a(href="Empowernment_mindmap-big-letters.html", "Please Click here to see the whole interactive HTML5-Map in high resulution.")),
-                                         img(src = "Empowerment_Mindmap.png", align ="right",
-                                             width="1100", 
-                                             height="582")
+                                         img(src = "Empowernment_mindmap-extreme-short-version.png", align ="center",
+                                             width="600", 
+                                             height="509")
                                          )))),
-                        
+                        #the big map: 1100 width und 582 height mit allign =right
+                        #or the small map in bigger: 700 und 593 oder 500 und 424
                         # eight tab content
                         tabItem(tabName = "Resources",
                                 h3("Resources"),
