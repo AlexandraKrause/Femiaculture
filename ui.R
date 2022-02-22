@@ -106,7 +106,7 @@ ui <- dashboardPage(skin =  "purple",
                                   column(10, offset = 1,
                                          tags$strong("The Impact pathway for Empowerment based on an economic assessment."),
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
-                                         img(src = "impact_pathway.png", 
+                                         img(src = "impact_pathway1.png", 
                                              width="600", 
                                              height="339"),# insert image :) src stands for source, url is ok. 
                                          #menuItem("Loopy1", icon = icon("pencil-alt"),
@@ -132,9 +132,9 @@ ui <- dashboardPage(skin =  "purple",
                                   p("What you see is my first draft of an impact pathway.
                                   It shows empowerment from an economic perspective, 
                                   quantifying each part in monetary values. It is a universal model that needs to be adapted to local needs, actual problems, and factors. 
-                                  This is a general impact pathway that is applicable for several local situations. Many examples for local cases are shown within the mind map you can see in the Map section below, 
-                                  even though it has its boundaries. The different parts of ecological and economic resource allocation visible in the mind map can be 
-                                  inserted into the Resources part."),
+                                  Many examples for local cases are shown within the mind map you can find through the Map tab.
+                                  The different parts of ecological and economic resource allocation visible through the Resource tab can be 
+                                  inserted into the Resources part of the Impact pathway."),
                                   tags$br(tags$br(p("Farnworth, C. R., Baudron, F., Andersson, J. A., Misiko, M., Badstue, L., & Stirling, C. M. (2016).
                                     Gender and conservation agriculture in East and Southern Africa: towards a research agenda. 
                                     International Journal of Agricultural Sustainability, 14(2), 142-165. https://doi.org/10.1080/14735903.2015.1065602."),
@@ -169,10 +169,10 @@ ui <- dashboardPage(skin =  "purple",
                                     their farm work as well as their domestic work. Also,in various contexts men share less food with their 
                                     wives, especially when having one or more other wives after them. This can also be true for the children. It means that
                                     there is less money for these investments than there is within the Empowerment pathway."),
-                                          p(" Another problem is when men are not paying for their wives' retirements and health care.
+                                          p(" Another problem is when men are not paying for their wives' health care.
                                           So, these women have less or no money for these investments. In the end, the outcome first means less money for women's
-                                    basic human needs like food, health care, and retirement. But it can also include other resources 
-                                    that are investigated within the local project.  Also, her earnings, e.g.from a job away from farm, 
+                                    basic human needs like food and health care. But it can also include other resources 
+                                    that are investigated within the local project.  Also, her earnings, e.g. from a job away from farm, 
                                     if there are any, need to be compared to the decision option to change the status quo.
                                     ")),
                                   (tags$strong("Missing workforce - the extra, possible variable")),
@@ -181,7 +181,7 @@ ui <- dashboardPage(skin =  "purple",
                                     of empowerment can be very different, and so is the position of females in families, their decision-making power,
                                     and their right to physical and psychological integrity. Not being empowered in the worst cases means the lack of human rights,
                                     and cuts of these rights can be seen in various local contexts and ladders of empowerment. Unfortunately, if the woman herself 
-                                    has no money for a pension, insurance, or health care itself and her husband is not paying for it, her health situation is in danger.
+                                    has no money for health care and her husband is not paying for it, her health situation is in danger.
                                     This obviously also depends on local law and health care provision, but the concept stays the same. Not being paid for work might lead
                                     the way to problems with not having employment protection. Working equipment is usually not produced or explicitly bought for women,
                                     multiplying the risk of injuries. Health risks can also include children when they are for example, connected with lack in obstetrics. 
@@ -206,7 +206,7 @@ ui <- dashboardPage(skin =  "purple",
                                   p("The Empowerment pathway shows the costs that need to be paid for education, 
                                     which leads to better economic standing. This might, for example, exists because
                                     the decision-maker decides to be employed and be paid for her work. Then resources
-                                    can be acquired. This includes more money for food and health care/retirement that 
+                                    can be acquired. This includes more money for food and health care that 
                                     needs to be calculated if these parts are also incorporated into the option of sticking 
                                     to the status quo. Like a ladder, the situation might only be changed stepwise. Therefore,
                                     the Empowerment pathway might contain several more or less economically beneficial options 
@@ -240,9 +240,9 @@ ui <- dashboardPage(skin =  "purple",
                                   p("With the money that was gathered within the former step, 
                                     an allocation of several resources should be possible. Trees, livestock, crops 
                                     (since there can be typical so-called male and female crops), water, breeding achievements 
-                                    (seeds/ livestock), ... . If the option of sticking to the status quo includes the parts named food and health care/retirement,
-                                    these also need to be included in here to compare the monetary values to each other. This point could include insurance payments and gains as well 
-                                    as retirement plans. These also could influence health and old-age poverty. Many different resources like saving working
+                                    (seeds/ livestock), ... . If the option of sticking to the status quo includes the parts named food and health care,
+                                    these also need to be included in here to compare the monetary values to each other. This point could include insurance payments or retirement savings. 
+                                    These also could influence health and old-age poverty. Many different resources like saving working
                                     equipment better nutrition/cooking options could also benefit health. Technological resources like mobile phones or radios are also
                                     crucial for further information gathering. The money could also be used for children's education. Many of these resource allocations
                                     open the way for new strategies against climate change and biodiversity options, which are not seldom welcomed by women. If food and 
@@ -316,8 +316,8 @@ ui <- dashboardPage(skin =  "purple",
                                   title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                   width = 12,
                                   tags$code("Resources to input into the model"),
-                                  p("This part of the mind map shows, which resources could be inserted into the model depending on the reserch
-                                    question and the local condition.")))),
+                                  p("This part of the mind map shows, which resources could be inserted into the Resource part of the model depending on the reserch
+                                    question and the local condition. This different parts of ecological and economic resource allocation.")))),
                         # size 700 and 451
                         #ninth tab content
                         tabItem(tabName = "Impressum",
