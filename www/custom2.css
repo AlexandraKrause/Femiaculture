@@ -1,0 +1,11 @@
+.box.box-solid.box-primary>.box-header {
+  color:#fff;
+  background:#664d80
+                    }
+
+.box.box-solid.box-primary{
+border-bottom-color:#664d80;
+border-left-color:#664d80;
+border-right-color:#664d80;
+border-top-color:#664d80;
+}
