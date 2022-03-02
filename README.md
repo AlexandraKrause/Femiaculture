@@ -15,4 +15,4 @@ Within this master thesis, I will apply literature research and a decision analy
 - for illiterates
 - for other projects
 
-- through a mobile phone app
+- through a mobile phone shiny app
