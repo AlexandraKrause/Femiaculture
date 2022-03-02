@@ -58,29 +58,39 @@ ui <- dashboardPage(skin =  "purple",
                                     p("Decision analysis implies actual help for decision-makers and is a powerful tool for system change. 
                                     It provides a quantitative assessment of interviews and workshops leading to the conduction of a stochastic model.
                                     The result is a holistic model of a complex system that also incorporates a decision's riskiness (Luedeling & Shepherd, 2016).
-                                    Working inter- & trans-disciplinary with for example scientists and farmers also gives new possibilities for information gathering. 
+                                    Working inter- & trans-disciplinary with, for example, scientists and farmers also give new possibilities for information gathering. 
                                     If repeated with the same group, it could also visualize change over the years after the last decision analysis was conducted."), 
-                                    p(" This is only an easy example of decision analysis with estimated values. Please see it as just an example of the possibilities of this methodology.
+                                    p(" This is only an easy example of decision analysis with estimated values. Please see it as just an example of the possibilities 
+                                    of this methodology.
                                     The scenario you see is the following: A small farmer near big cities is growing and selling salad in small pots. 
-                                    He has access to local markets and is currently using peat as a substrate. 
-                                    Ultimately, he would like to know if using food-based compost would be a good decision market-wise. 
-                                    Unfortunately, the compost costs more than peat. But he might see higher incomes due to better
-                                    marketing of salads produced with the compost due to its higher environmental value: Customers might pay more for this salad.
+                                    He has access to local markets and is currently using peat as a substrate. The small farmer is not dependent on machinery adjusted
+                                    to peat use.Ultimately, he would like to know if using food-based compost would be a good decision market-wise. 
+                                    He might see higher incomes due to better marketing of salads produced with the compost due to its higher environmental value:
+                                    Customers might pay more for this salad."),
+                                    p("Here, the initial calculation depends on example values using end-consumer prices for peat and compost so that compost is cheaper.
                                     The model calculates the scenario for a five-year duration, using values of 0.34 for peat cost, 1.8 for substrate cost
-                                    And estimating farmers' earnings as between 0.1 and 1.9. You see the initial graph on the page - if 
+                                    and estimating farmers' earnings as between 0.1 and 1.9."),
+                                    p("You see the initial graph on the page - if 
                                     you changed the values on the slider, you could reload the page.
                                     Beneath this text, a table also shows the current values.
                                     So what should the farmer decide on doing? 
                                     Please use the slider and see how the graph changes: Depending on the amount of money the farmer could earn,
                                     he should decide on using compost or peat. Also, the decision changes with the costs for the two substrates.
-                                    As you see, input estimates are needed: Numbers to insert into such models that are well estimated.
-                                    But I cannot do this alone. 
-                                    And for this, experts are needed: farmers, scientists, consultants and others, who would like to participate in a workshop or fill out questionnaires
-                                    to give these estimates. Together with values from literature research, very good estimates can be found. 
-                                    And luckily, the results are readily available for all decision-makers, workshop participants, and stakeholders
+                                    As you see, input estimates are needed: Well estimated numbers to insert into such models."),
+                                    p("In reality, for the decision analysis process, values like overall sales, yields, prices for substrate, market prices,
+                                    farmer's different production costs as well as risks would be assessed together with the 
+                                    ability of the machines to work with the food waste-based compost, personnel costs, and the availability of
+                                    amounts of compost. Transport costs might differ between the two substrates as well. 
+                                    The whole system would need to be accessed, not only the costs: Even if smaller yields with large replacement of 
+                                    peat would be observed, the production might still generate enough income for the small farmers through higher prices
+                                    in direct marketing.The prices farmers would need to generate profit with these peat alternatives could be assessed then."),
+                                    p("Think of sliders for these different input estimates that a farmer could use to insert the values he knows from his own farm,
+                                    adapting the model to his own situation. But not all values can be taken from his experience - he should find some estimates
+                                    already on the website. And for this, experts are needed: farmers, scientists, consultants, and others, who would like to participate in
+                                    a workshop or fill out questionnaires to give these estimates. Together with values from literature research, very good estimates 
+                                    can be found. And luckily, the results are readily available for all decision-makers, workshop participants, and stakeholders
                                     as websites like this or handy apps make them easily accessible.
                                     Please consider taking part in the making of a model and visit the other tabs for more information."),
-                                    
                                     p("Luedeling, E., & Shepherd, K. (2016). Decision-Focused Agricultural Research. Solutions, 7(5), 46-54.")
                                   )),
                                 fluidRow(
@@ -108,7 +118,7 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
                                          img(src = "impact_pathway1.png", 
                                              width="600", 
-                                             height="339"),# insert image :) src stands for source, url is ok. 
+                                             height="339")# insert image :) src stands for source, url is ok. 
                                          #menuItem("Loopy1", icon = icon("pencil-alt"),
                                          #         href = "https://bit.ly/34gcgaQ")
                                          )),
@@ -322,18 +332,27 @@ ui <- dashboardPage(skin =  "purple",
                         #ninth tab content
                         tabItem(tabName = "Impressum",
                                 h3("Impressum"),
-                                box(
+                                fluidRow(box(
                                   title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                   width = 12,
                                   column(10, offset = 1,
-                                         tags$strong("Impressum"),
-                                         p("...."), 
+                                         tags$br(tags$strong("Impressum")),
                                          icon = icon("star",class =NULL, lib="font-awesome"),
-                                         p("Someones adress (university i guess) and logos by university bonn and cgiar and more? have to be in here. does anyone know?
-                                           and the whole page has to be visible directly when using the link, not by a sidebar menu"),
-                                         p("Visit me at github.com/AlexandraKrause, Find me on twitter: @Al__Krause
+                                         p("The Institute of Plant Sciences and Resource Conservation (INRES) of the University of 
+                                         Bonn is represented by the Executive Director Prof. Dr. Claudia Knief"),
+                                         tags$strong("Secretariat:"),
+                                         p("Karlrobert-Kreiten-Strasse 13"),
+                                         p("D-53115 Bonn"),
+                                         p("Phone.: ++49 (0)228 732851"),
+                                         p("Fax: ++49 (0)228 732489"),
+                                         p("Email: inres@uni-bonn.de"),
+                                         p("The Horticultural Sciences Department of the University of Bonn is represented by Prof. Dr. Eike Luedeling."),
+                                         tags$div(tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "http://inresgb-lehre.iaas.uni-bonn.de/impressum/")),
+                                         tags$br(tags$strong("Further information")),
+                                         p("Feel free to visit me at github.com/AlexandraKrause, Find me on twitter: @Al__Krause
                                          or Contact me via s7alkrau@uni-bonn.de"),
-                                         tags$a(href="https://github.com/AlexandraKrause", "click for github")
+                                         tags$a(href="https://github.com/AlexandraKrause", "click for github"),
+                                         img(src = "uni_logo.png")),
                                   )))
                         
                         
