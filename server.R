@@ -299,7 +299,7 @@ server <- function(input,output) {
                                         method = 'smooth_simple_overlay', 
                                         colors = c("purple3", "pink2", "gray32", "rosybrown1",
                                                    "gray34", "gray35", "gray36", "gray37"),
-                                        base_size = 12)
+                                        base_size = 13)
   })
   
 }

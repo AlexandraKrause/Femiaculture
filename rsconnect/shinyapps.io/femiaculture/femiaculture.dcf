@@ -1,0 +1,14 @@
+name: femiaculture
+title:
+username:
+account: femiaculture
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6461435
+bundleId: 5993627
+url: https://femiaculture.shinyapps.io/femiaculture/
+when: 1654800258.21919
+lastSyncTime: 1654800258.21919
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: README.md
