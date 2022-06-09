@@ -1,6 +1,6 @@
 # ✨ Femiaculture ✨
-🌱 During my thesis, I will research factors influencing rural farm women’s empowerment in agricultural development.
-Within this master thesis, I will apply literature research and a decision analysis to assess the unequal resource distribution between male and female farmers and evaluate how gender can be captured in modeling efforts. 
+🌱 During my thesis, I researched factors influencing rural farm women’s empowerment in agricultural development.
+Within this master thesis, I applied a literature research and the Decision Analysis methodologie to assess the unequal resource distribution between male and female farmers and to evaluate how gender can be captured in modeling efforts. 
 
 💬 The "Femiaculture" Shiny App has the following purposes:
 
@@ -8,7 +8,7 @@ Within this master thesis, I will apply literature research and a decision analy
 - B) Communicate with supervisors
 - C) Present results to scientists in the end
 
-💬 and furthermore depending on the situation, also include accessibility …
+💬 and furthermore scientists can adapt the core code ...
 
 - for farm women 
 - for participants
@@ -16,3 +16,5 @@ Within this master thesis, I will apply literature research and a decision analy
 - for other projects
 
 - through a mobile phone shiny app
+
+Here you find the website: https://femiaculture.shinyapps.io/femiaculture/
