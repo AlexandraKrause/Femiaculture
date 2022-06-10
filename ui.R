@@ -103,9 +103,10 @@ ui <- dashboardPage(skin =  "purple",
                                 fluidRow(
                                   box(
                                     title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
-                                    tableOutput("table1")
-                                  ))
-                        ),
+                                    tableOutput("table1"),
+                                  ),
+                                  tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:30px;",style = "color: black;")
+                        )),
                         # Second tab content
                         tabItem(tabName = "The Project",
                                 h2("Widgets tab content"),
@@ -142,8 +143,9 @@ ui <- dashboardPage(skin =  "purple",
                                     and stakeholders as websites like this or handy apps make them easily accessible.
                                     Please consider taking part in the making of a model and visit the other tabs for more information.
                                     Further information regarding the methodology can be found within my master thesis."),
-                                    p("Luedeling, E., & Shepherd, K. (2016). Decision-Focused Agricultural Research. Solutions, 7(5), 46-54."),
-                                  ))
+                                    p("Luedeling, E., & Shepherd, K. (2016). Decision-Focused Agricultural Research. Solutions, 7(5), 46-54.")
+                                  )),
+                                tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         
                         # forth tab content
@@ -225,7 +227,9 @@ ui <- dashboardPage(skin =  "purple",
                                     Evidence from Bangladesh, Ethiopia, Indonesia, and South Africa Oxford Bulletin of Economics and Statistics,
                                     65(3), 283-327. https://doi.org/10.1111/1468-0084.t01-1-00052.")))
                                     
-                                  ))),
+                                  )),
+                                tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
+                                ),
                         #fifth tbl content
                         tabItem(tabName = "Status",
                                 h3("Status"),
@@ -273,7 +277,9 @@ ui <- dashboardPage(skin =  "purple",
                                     multiplying the risk of injuries. Health risks can also include children when they are, for example, connected with lacks in obstetrics. 
                                     Access to nutritious food can also be denied by the husband. This can have a direct beneficial effect on a woman's 
                                     health and workforce.")
-                                  ))),
+                                  )),
+                                tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
+                                ),
                         #oder 700 und 320
                         
                         #sixt tbl content
@@ -343,7 +349,8 @@ ui <- dashboardPage(skin =  "purple",
                                     resource allocations as well as economic allocations depending on the local and individual context can also benefit the whole family and
                                     might therefore in some contexts be welcomed by male family members as well. This topic will be further discussed in the", tags$em(" risk section"),
                                       "below.
-                                    ")))
+                                    "))),
+                                  tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         #seventh tab content
                         tabItem(tabName = "Risk",
@@ -377,7 +384,8 @@ ui <- dashboardPage(skin =  "purple",
                                     part of the text shows. It is the decision-maker herself who should decide whether another option would be possible or not. 
                                     What should be marked in this context is that also the option to stick to a status quo could lead to health risks since they are a major issue here." 
                                       
-                                    )))
+                                    ))),
+                                  tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         # eight tab content
                         tabItem(tabName = "Map",
@@ -397,7 +405,9 @@ ui <- dashboardPage(skin =  "purple",
                                          
                                          tags$hr(),
                                          tags$br(img(src = "Extended-Decision-Analysis-Impact-Pathway-06.2022.drawio.png", align ="center"))
-                                  )))),
+                                  ))),
+                                tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
+                                ),
                         
                         
                         tabItem(tabName = "Resources",
@@ -415,7 +425,9 @@ ui <- dashboardPage(skin =  "purple",
                                     tags$code("Resources to input into the model"),
                                     p("This mind map shows, which resources could be usefull for the Resource part of the model depending on the research
                                        goal and the local condition. Information technologies like mobile phones can also be part of \"Education/Training\" calculations."
-                                    )))),
+                                    ))),
+                                tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
+                                ),
                         # size 700 and 451
                         #ninth tab content
                         tabItem(tabName = "Impressum",
@@ -438,8 +450,8 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$div(tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "http://inresgb-lehre.iaas.uni-bonn.de/impressum/")),
                                          tags$br(tags$strong("Further information")),
                                          p("Feel free to visit me at github.com/AlexandraKrause, Find me on twitter: @Al__Krause
-                                         or Contact me via s7alkrau@uni-bonn.de"),
-                                         tags$a(href="https://github.com/AlexandraKrause", "click for github"),
+                                         or contact me via s7alkrau@uni-bonn.de"),
+                                         tags$a(href="https://github.com/AlexandraKrause", "click for github",style = "font-size:20px;"),
                                          img(src = "uni_logo.png")))
                                 )))
                       
