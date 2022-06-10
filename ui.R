@@ -45,23 +45,26 @@ ui <- dashboardPage(skin =  "purple",
                                     width = 6, 
                                     tags$strong("Welcome to Femiaculture", style = "font-size:20px;"),
                                     p(" This website was build during a master thesis focusing on factors influencing rural farm-women's empowerment.
-                                      A literature research was conducted, experts were asked and conferences visited to understand the underlying system
-                                      of empowerment. A model was conducted, which visualised the system (see the 'Map'-section.). 
+                                      Literature research was conducted, and experts were asked and conferences were visited to understand the underlying 
+                                      empowerment system.
+                                      A model was made, which visualized the system (see the  \"Map\"-section.). 
                                       Later, the Decision Analysis methodology was applied to conduct a generalized statistical model, 
                                       suggesting it as a measurement technique of the researched factors. 
-                                      But Decision Analysis also bears the possibility for actual change in form of an online information system for farm women.
-                                      Therefore, researchers need to adapt the model to local situations and change the webiste's code to 
+                                      But Decision Analysis also bears the possibility for actual change in the form of information for farm women.
+                                      By using Shiny apps like these, online information systems can be developed.
+                                      Therefore, researchers need to adapt the model to local situations and change the website's code to 
                                       rural women's user needs. Find more information in my master thesis."),
                                     p("Please try it out yourself: You see the initial graph left on the page - if you changed the values on the slider, 
-                                      you could reload the page.
+                                      you see the chart changing (if not, please reload the page).
                                       Beneath the sliders and the text, a table also shows the current values.
-                                      So, what should a farm women decide on doing? Empower herself or choose not to change her status quo situation?
+                                      So, what should a farm women decide to do? 
+                                      Should she empower herself or choose not to change her status quo situation?
                                       Please use the slider and see how the graph changes: Depending on the amount of money the farm woman could earn,
                                       she should decide on eather the one or the other option. 
-                                      Also, the decision is influenced by the costs for the influencing factors like education, the outcome benefits like
-                                      health and food/ nutrition and the risk of being unsafe.
+                                      Also, the decision is influenced by the costs of the influencing factors like education, the outcome benefits like
+                                      health and food/ nutrition, and the risk of being unsafe.
                                       As you see, input estimates are needed: Well estimated numbers to insert into such models."),
-                                    p("To find out more, please klick on 'The Project' and read the following texts on this website."),
+                                    p("To find out more, please click on \"The Project\" and read the following texts on this website."),
                                     div(
                                       # use HTML by wrapping it with this function. 
                                       # Use a bootstrap or Font Awesome icons 
@@ -121,31 +124,25 @@ ui <- dashboardPage(skin =  "purple",
                                     The result is a holistic model of a complex system that also incorporates a decision's riskiness (Luedeling & Shepherd, 2016).
                                     Working inter- & trans-disciplinary with, for example, scientists and farmers also give new possibilities for information gathering. 
                                     If repeated with the same group, it could also visualize change over the years after the last decision analysis was conducted."), 
-                                    p(" Notice that not only the input parameters, but also the code might need to be adapted to local scenarios. 
-                                    Partcipatory workshops will clarify if an adaptation is needed. 
-                                    The scenario you see is the following: A farm woman is working on the farm and the household. She might be ristricted by factors
-                                    that limit her empowerment (e.g., inner-household limitations, limited market-access, ...). She could for example decide on
-                                    visiting training/eduaction options to find out more about economic options, use these options to gather money, buy more agricultural resources 
-                                    like chickens and sell them to gather money for health care and food/ nutrition. Also, her husband might share responsibility for these investemnts.
-                                    Other researched outputs like education would need to be further included into the core code. 
-                                    More money for health care and food/nutrition might lead to more effective working hours
-                                    per month doing differnt kinds of farm or domestic work."),
-                                    p("For the decision analysis process, many values, so called 'input estimates' are needed.
-                                    Every calculated step can include several of such estimates like 
-                                    costs for hiring labor, market prices or loans. Also the estimation of the risk of unsafety should also be done by considering several
-                                    possible risk factors like child marriage, husband's alcohol consumption or upbringing."),
+                                    p("For the decision analysis process, many values, so-called \"input estimates\" are needed.
+                                    Every calculated step can include several such estimates like 
+                                    costs for hiring labor, market prices, or loans. 
+                                    Also, the estimation of the decision's riskiness, which is women's unsafety in my model, 
+                                    should be done by considering several possible risk factors like child marriage, 
+                                    husband's alcohol consumption or upbringing."),
                                     p("After adopting the model to a local situation, the application can be tailored to end-users.
                                     Think of sliders for these different input estimates that a female farmer could use to insert the values 
-                                    she knows from her own live, adapting the model to her own individual situation.
+                                    she knows from her own life, adapting the model to her own individual situation.
                                     But not all values can be taken from her experience - he should find some estimates
                                     already on the website, for example from a local development program or other farmers.
                                     And for this, experts are needed: farmers, scientists, consultants, and others, who would like to participate in
                                     a workshop and fill out questionnaires to give these estimates. 
                                     Together with values from literature research, very good estimates 
-                                    can be found. And luckily, the results are readily available for all decision-makers, workshop participants, and stakeholders
-                                    as websites like this or handy apps make them easily accessible.
-                                    Please consider taking part in the making of a model and visit the other tabs for more information."),
-                                    p("Luedeling, E., & Shepherd, K. (2016). Decision-Focused Agricultural Research. Solutions, 7(5), 46-54.")
+                                    can be found. And luckily, the results are readily available for all decision-makers, workshop participants,
+                                    and stakeholders as websites like this or handy apps make them easily accessible.
+                                    Please consider taking part in the making of a model and visit the other tabs for more information.
+                                    Further information regarding the methodology can be found within my master thesis."),
+                                    p("Luedeling, E., & Shepherd, K. (2016). Decision-Focused Agricultural Research. Solutions, 7(5), 46-54."),
                                   ))
                         ),
                         
@@ -169,10 +166,10 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     tags$code("General Overview"),
-                                    p(" During my thesis, I will research factors influencing rural farm women's empowerment in agricultural development.
-                                  Within this master thesis, I will apply literature research and a decision analysis to assess the unequal
-                                  resource distribution between male and female farmers and evaluate how gender can be captured in modeling efforts.
-                                  Women contribute not only to farm work, they are also often the primary providers of care for children and elderly family members
+                                    p(" During my thesis, I researched factors influencing rural farm women's empowerment in agricultural development.
+                                  I did a literature research and a decision analysis to assess the unequal
+                                  resource distribution between male and female farmers and to evaluate how gender can be captured in modeling efforts.
+                                  Women contribute not only to farm work, they are also often the primary providers of care for children and elderly family members,
                                   and are also often solely responsible for their family's nutrition and health (Meinzen-Dick et al., 2011). 
                                   Unfortunately, women often lack access to resources and knowledge (Farnworth et al., 2016).
                                   A shift in the distribution of resources between male and female farmers, such as women's access to education, 
@@ -180,13 +177,41 @@ ui <- dashboardPage(skin =  "purple",
                                   It could site-specifically increase general decision-making power, and with it, productivity, 
                                   food, and nutrition security, as well as educational outcomes for women and children (Farooq et al., 2019; Hallman, 2000; Quisumbing & Maluccio, 2003). 
                                   Often these benefits are connected to other positive effects. For example, increased nutrition security can reduce difficult births (Hallman, 2000)."),
-                                    
-                                    p("What you see is my first draft of an impact pathway.
+                                    tags$code("The model"), 
+                                    p("What you see is the small impact pathway, which is also the base for the code.
                                   It shows empowerment from an economic perspective, 
-                                  quantifying each part in monetary values. It is a universal model that needs to be adapted to local needs, actual problems, and factors. 
-                                  Many examples for local cases are shown within the Decision Analysis impact pathway you can find through the Map tab.
-                                  The different parts of ecological and economic resource allocation visible through the Resource tab can be 
-                                  inserted into the Resources part of the Impact pathway."),
+                                  quantifying each part in monetary values. It is a universal model that needs to be adapted to local needs,
+                                  actual problems, and factors. 
+                                  "),
+                                    tags$p("The scenario you see is the following: A farm woman works on the farm and the household.
+                                    She might be restricted by factors that limit her empowerment and disproportionally affect women in her region
+                                    (e.g., inner-household limitations, limited market access, limited hired labor availability, limited job opportunities). 
+                                    She could decide on visiting training/education options to find out more about economic possibilities,
+                                    use these options to gather money, buy more agricultural resources 
+                                    like chickens and sell them for investments like health care and food/ nutrition. 
+                                    Instead of selling chickens, she might process foods and sell these. 
+                                    She might also find a payed job where she does not need to buy and sell agricultural resources
+                                    (e.g., an off-farm job, being employed) and can invest in other goods directly.
+                                    Also, her husband might share responsibility for these investments.
+                                    More money for health care and food/nutrition might lead to more effective working hours
+                                    per month doing different kinds of farm or domestic work.
+                                    Other researched outputs like investments in children's education or clothes
+                                    could also be included by adapting the actual model. The \"Workforce\" model part 
+                                    can also be left out, so the pathway ends with a farm woman's monetary benefit from resource 
+                                    adaptation or direct economic surpluses (e.g., due to credit or job options).
+                                    Scientists can run the model for several different options using different input estimates. 
+                                    Training programs, including women's groups, focusing on women's market access,
+                                    or emphasizing discussing gender relations with males
+                                    could have different impacts on the empowerment scenarios. Heterogenous groups of females
+                                    including minorities like migrants or disabled women could be addressed by tailoring the 
+                                    decision to them. Scientists can feed the model with all kinds of input estimates. 
+                                    For more severe changes, the core code can be easily adjusted to several research interests.
+                                    Notice that not only the input parameters but also the code might need to be adapted to local
+                                    scenarios. Participatory workshops will clarify if an adaptation is needed.
+                                      Many examples for local cases are shown within the extended Decision Analysis impact pathway you can find through the \"Map\" tab on the left.
+                                  The different parts of ecological and economic resource allocation visible through the \"Resource\" tab can be 
+                                  usefull within the Resources part of the Impact pathway. Information technologies like mobile phones can also be part of \"Education/Training\""),
+                                    
                                     tags$br(tags$br(p("Farnworth, C. R., Baudron, F., Andersson, J. A., Misiko, M., Badstue, L., & Stirling, C. M. (2016).
                                     Gender and conservation agriculture in East and Southern Africa: towards a research agenda. 
                                     International Journal of Agricultural Sustainability, 14(2), 142-165. https://doi.org/10.1080/14735903.2015.1065602."),
@@ -218,14 +243,21 @@ ui <- dashboardPage(skin =  "purple",
                                     tags$br(p("The Option of sticking to the status quo leads down a path of losses. Empowerment 
                                     can be compared to a ladder: Depending on the situation the woman is in, the effects of the lack of Empowerment
                                     can be worse or less. But the general disadvantages stay the same. Women are often not paid for
-                                    their farm work as well as their domestic work. Also,in various contexts men share less food with their 
-                                    wives, especially when having one or more other wives after them. This can also be true for the children. It means that
+                                    their farm work as well as their domestic work. Even if they manage their own land, they still have to carry the burden
+                                    of domestic work and are often expected to neglect their own economic farm work for their husband's farm or household needs.
+                                    In other cases, women have to give all or parts of their income, derived from their own agricultural resources, to their husbands.
+                                    Women might be allowed to gather few incomes by selling small amounts of farm goods. But on the one hand, the economic value might be minimal
+                                    and on the other women might not be able to spend it on their own needs, but only on their families.
+                                    Also, in various contexts, men who earn the family's money share less food with their wives, 
+                                    especially when having one or more other wives. This can also be true for the children. It means that
                                     there is less money for these investments than there is within the Empowerment pathway."),
-                                            p(" Another problem is when men are not paying for their wives' health care.
-                                          So, these women have less or no money for these investments. In the end, the outcome first means less money for women's
+                                    p("Another problem is when men who are already restricting their wives from earning money 
+                                    are not paying for their wives' health care.
+                                    So, these women have less or no money for these investments. In the end, the outcome first means less money for women's
                                     basic human needs like food and health care. But it can also include other resources 
-                                    that are investigated within the local project.  Also, her earnings, e.g. from a job away from farm, 
-                                    if there are any, need to be compared to the decision option to change the status quo.
+                                    that are investigated within the local project. Also, her earnings, e.g. from a job away from farm, 
+                                    if there are any, need to be compared to the decision option to change the status quo. Within this model only resource allocation
+                                    and selling on farm are included.
                                     ")),
                                     (tags$strong("Missing workforce - the extra, possible variable")),
                                     p(" As visible in the graph, the main obstacles of being not empowered are life-threatening. 
@@ -233,12 +265,14 @@ ui <- dashboardPage(skin =  "purple",
                                     of empowerment can be very different, and so is the position of females in families, their decision-making power,
                                     and their right to physical and psychological integrity. Not being empowered in the worst cases means the lack of human rights,
                                     and cuts of these rights can be seen in various local contexts and ladders of empowerment. Unfortunately, if the woman herself 
-                                    has no money for health care and her husband is not paying for it, her health situation is in danger.
-                                    This obviously also depends on local law and health care provision, but the concept stays the same. Not being paid for work might lead
-                                    the way to problems with not having employment protection. Working equipment is usually not produced or explicitly bought for women,
-                                    multiplying the risk of injuries. Health risks can also include children when they are for example, connected with lack in obstetrics. 
-                                    Access to nutritious food can also be denied by the husband, as studies how. This can have a direct beneficial effect on a woman's 
-                                  health and workforce.")
+                                    has no money for health care and her husband is not paying for it, her health situation is in danger. 
+                                    This obviously also depends on local laws and health care provisions.
+                                    A husband might also be willing to spend a certain amount of money directly on these investemnets depending on local and individual cases.
+                                    This also is calculated. 
+                                    Health is dependant on several factors. Working equipment is usually not produced or explicitly bought for women and women might lack training,
+                                    multiplying the risk of injuries. Health risks can also include children when they are, for example, connected with lacks in obstetrics. 
+                                    Access to nutritious food can also be denied by the husband. This can have a direct beneficial effect on a woman's 
+                                    health and workforce.")
                                   ))),
                         #oder 700 und 320
                         
@@ -257,51 +291,57 @@ ui <- dashboardPage(skin =  "purple",
                                     width = 12,
                                     tags$code("Changing status Quo"),
                                     p("The Empowerment pathway shows the costs that need to be paid for education, 
-                                    which leads to better economic standing. This might, for example, exists because
-                                    the decision-maker decides to be employed and be paid for her work. Then resources
-                                    can be acquired. This includes more money for food and health care that 
+                                    which leads to better economic standing. This might, for example, exist because
+                                    the decision-maker decides to be employed and be paid for her work or to use a credit. 
+                                    Then resources can be acquired. This includes more money for food and health care that 
                                     needs to be calculated if these parts are also incorporated into the option of sticking 
                                     to the status quo. Like a ladder, the situation might only be changed stepwise. Therefore,
                                     the Empowerment pathway might contain several more or less economically beneficial options 
                                     depending on what is possible for the woman in her situation. Depending on the actual decision,
                                     some steps might be left out or varied."),
-                                    tags$strong("The first step would be Education, which is a cost factor."),
+                                    tags$strong("The first step would be \"Education\", which is a cost factor."),
                                     p("Information about negotiations might require investments in education. In these cases, this step is essential.
                                     An example for this first step would be: A woman needs to change her time use as an initial step to get further information on how to change her status quo.
                                     Education means Information gathering. An essential step to empowerment is the awareness of the current social situation of females, especially within the community,
                                     and possibilities to better the case. Understanding what empowerment is or could be is necessary for achieving a more empowered situation for oneself. Then other themes
-                                    like nutrition, health, climate change, and agricultural practices can be understood from the women's perspective. The amount of money paid for a seminar itself, transportation,
+                                    like nutrition, health, climate change, and agricultural practices can be understood from a female perspective. The amount of money paid for a seminar itself, transportation,
                                     internet, electricity, or other factors is calculated here. A significant cost factor for all parts of the model is time: To number the effort, the amount of money she would need
                                     to pay for someone else doing her work (e.g., Child care, fieldwork) could be calculated. Many women in agriculture are not paid for their work and are expected to do long work hours
-                                    when they are sick, it is hard to find someone who takes their place. This model assumes that there is a monetary value to this. Even if the work could not be done by someone else, 
+                                    when they are sick. It is hard to find someone who takes their place. This model assumes that there is a monetary value to this. Even if the work could not be done by someone else, 
                                     but the woman later will have to work more, this number replicates the cost for a time-use change. A beneficial factor might be a social environment beneficial for the female farmer. 
                                     Other women from women's groups with who she could share transportation would be an excellent example in this case. But for all steps of the model,
                                     help from a positive environment could lower the cost for each step."),
-                                    tags$strong("The next step would be Economy:"),
-                                    p("The economy part of the model also means costs like time use or child or elderly care payments.
-                                    But it also includes economic gains like finding a paid job or employment off farm. Asking the husband
+                                    tags$strong("The next step would be \"Economy\":"),
+                                    p("The \"Economy\" part of the model also means costs like time use or child or elderly care payments.
+                                    But it also includes economic gains like finding a paid job or employment off-farm. Asking the husband
                                     to pay her for her work is also an option. Also, see our", tags$a(href="https://rpubs.com/Gendergroup/808624", "Gendergroup pension project"), 
-                                      "where we observed several pathways for in-married farm wives to achieve money for several pension options. It shows vividly
+                                      "where we observed several pathways for german in-married farm wives to achieve money for several pension options. It shows vividly
                                     that depending on the local context, many different options should be modeled, depending on inner-household and external social pressure.
                                     We also included the case of high inner-household pressure as an option to choose the less monetarily valuable but peace-keeping option 
-                                    of having an own branch on her husband's farm. This shows the importance of leaving the decision to the decision-maker and not only observing 
+                                    of still working on her husband's farm but either being paid for the same work or having her own farm branch, from which she can keep the money.
+                                    Processing food might be an example for her own farm brach.
+                                    This shows the importance of leaving the decision to the decision-maker and not only observing 
                                     the economically best outcome. The farm wife decides what she would like to do and what options would be doable for her in her own individual
                                     situation. If the study is done with a group of women, shiny app with sliders like the ones you saw in the first tab (Decision analysis basics) 
                                     might be helpful for a single woman to adapt the model for her
                                     individual situation."),
-                                    tags$strong("The next step would be Resource allocation: "),
+                                    tags$strong("The next step would be \"Resource allocation\": "),
                                     p("With the money that was gathered within the former step, 
-                                    an allocation of several resources should be possible. Trees, livestock, crops 
-                                    (since there can be typical so-called male and female crops), water, breeding achievements 
-                                    (seeds/ livestock), ... . If the option of sticking to the status quo includes the parts named food and health care,
-                                    these also need to be included in here to compare the monetary values to each other. This point could include insurance payments or retirement savings. 
-                                    These also could influence health and old-age poverty. Many different resources like saving working
-                                    equipment better nutrition/cooking options could also benefit health. Technological resources like mobile phones or radios are also
-                                    crucial for further information gathering. The money could also be used for children's education. Many of these resource allocations
-                                    open the way for new strategies against climate change and biodiversity options, which are not seldom welcomed by women. If food and 
-                                    health care are part of the option of sticking to the status quo, they need to be included here as well. It must be said that many 
+                                    an allocation of several resources should be possible. First agricultural resources like trees, livestock, crops 
+                                    water, breeding achievements can be allocated. It needs to be mentioned that resources are often seperated into male and female resources,
+                                    depending on their prestige, limiting women's access to benefit from their monetary value. High economic benefit might also be 
+                                    associated with male income generation, so that only smaller amounts might be gathered without facing inner-household violence.
+                                    With agricultural resource allocation, farm women can invest in other goods like health care services. 
+                                    A husband might also be willing to spend money  directly on these investemnets depending on local and individual cases.
+                                    If the option of sticking to the status quo includes the parts named food and health care,
+                                    these also need to be included in here to compare the monetary values to each other.
+                                    A women might spend money on different resources, that further influence the empowerment pathway like a spiral: Working
+                                    equipment and training or technological advantages like mobile phones can benfit her future farm work, her optons and her informed 
+                                    decision making. Technological resources like mobile phones or radios can be a crucial advantage for further information gathering. 
+                                    The money could also be used for children's education. 
+                                    Many of these resource allocations open the way for new strategies against climate change. It must be said that 
                                     resource allocations as well as economic allocations depending on the local and individual context can also benefit the whole family and
-                                    might therefore be welcomed by male family members as well. This topic will be further discussed in the", tags$em(" risk section"),
+                                    might therefore in some contexts be welcomed by male family members as well. This topic will be further discussed in the", tags$em(" risk section"),
                                       "below.
                                     ")))
                         ),
@@ -319,8 +359,8 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     tags$code("The social Environmnet"),
-                                    p("It is affecting all steps of the model as cost reducers. In its negative form, a complex social environment 
-                                    is incorporated as several options to choose from (see the Economic section) or as a risk."),
+                                    p("It is affecting all steps of the model as a cost reducer. In its negative form, a complex social environment 
+                                    can be incorporated as several options to choose from to limit danger (see the Economic section) or as a risk."),
                                     tags$br(tags$code("The Stop Point")),
                                     p(" A problematic social environment in which complex behavior towards women is accepted or praised and victims are blamed,
                                     or strong backlash exists, can also strengthen problematic inner-household dynamics and masculinities. These can lead as well
@@ -333,10 +373,9 @@ ui <- dashboardPage(skin =  "purple",
                                     the model puts out a binominal distribution of 0/1. The model, so to say, stops when the decision-maker sees the process as too dangerous.
                                     Various studies show that economic strength can lead to backlash, and inner-household peace can be disturbed. If mental and physical safety
                                     can still be guaranteed in a form the decision-maker conforms with, options of less economic solid benefit and resource allocations can be 
-                                    decided on, as the ",
-                                      tags$em("Economy"), 
-                                      "part of the text shows. It is the decision-maker herself who should decide whether another option would be possible or not. 
-                                    What should be marked in this context is that also the option to stick to a status quo also could lead to health risks since they are a major issue here." 
+                                    decided on, as the \"Economy\"
+                                    part of the text shows. It is the decision-maker herself who should decide whether another option would be possible or not. 
+                                    What should be marked in this context is that also the option to stick to a status quo could lead to health risks since they are a major issue here." 
                                       
                                     )))
                         ),
@@ -374,8 +413,9 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     tags$code("Resources to input into the model"),
-                                    p("This mind map shows, which resources could be inserted into the Resource part of the model depending on the research
-                                       goal and the local condition.")))),
+                                    p("This mind map shows, which resources could be usefull for the Resource part of the model depending on the research
+                                       goal and the local condition. Information technologies like mobile phones can also be part of \"Education/Training\" calculations."
+                                    )))),
                         # size 700 and 451
                         #ninth tab content
                         tabItem(tabName = "Impressum",

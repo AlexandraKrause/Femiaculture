@@ -225,7 +225,7 @@ server <- function(input,output) {
                      "Status Quo Workforce payout (Dollar/Month)",
                      "Empowerment Workforce investment (Dollar/Month)",
                      "Empowerment Workforce payout (Dollar/Month)",
-                     "SQ Husband's Workforce investment (Dollar/Month)",
+                     "Status Quo Husband's Workforce investment (Dollar/Month)",
                      "Husband's Workforce investment (Dollar/Month)",
                      "Coefficient of variation",
                      "Discout rate",
