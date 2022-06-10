@@ -290,6 +290,7 @@ server <- function(input,output) {
     
   })
   
+  #Net present value
   
   output$plot1 <- renderPlot({
     
@@ -301,6 +302,51 @@ server <- function(input,output) {
                                                    "gray34", "gray35", "gray36", "gray37"),
                                         base_size = 13)
   })
+  #Boxplot 
   
-}
+  output$plot2 <- renderPlot({
 
+decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(), 
+                                    vars = c("NPV_decision_profit_with_empowerment"
+                                    ),
+                                    method = 'boxplot', 
+                                    base_size = 7)
+  })
+  #Cashflow
+  
+  output$plot3 <- renderPlot({
+  
+  Cashflow <- plot_cashflow(mcSimulation_object = chile_mc_simulation(),
+                            cashflow_var_name = "Cashflow_decision_empowerment",
+                            x_axis_name = "Month",
+                            y_axis_name = "Cashflow in Dollar",
+                            color_25_75 = "green4",
+                            color_5_95 = "green1",
+                            color_median = "red")
+  Cashflow
+  
+  })
+  #PLS (Partial least square regression)
+  
+  output$plot4 <- renderPlot({
+    
+  pls_result_1 <- plsr.mcSimulation(object = chile_mc_simulation(),
+                                    resultName = "NPV_decision_profit_with_empowerment",
+                                    ncomp = 1)
+  
+  plot_pls(pls_result_1, threshold = 0.8, input_table = dataSource())
+  
+  })
+  #EVPI
+  
+#  output$plot5 <- renderPlot({
+  
+#  mcSimulation_table <- data.frame(chile_mc_simulation()$x,
+#                                   chile_mc_simulation()$y[1:3])
+#  evpi <- multi_EVPI(mc = mcSimulation_table, 
+#                     first_out_var = "NPV_Empowerment_profit")
+#  plot_evpi<-plot_evpi(evpi,
+#                       decision_vars = "NPV_decision_profit_with_empowerment")
+  
+#  })
+  }

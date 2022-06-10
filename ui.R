@@ -38,7 +38,6 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title ="NPVs", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                     plotOutput("plot1"), 
-                                    
                                   ),
                                   box(
                                     title = "Femiaculture", status = "primary",solidHeader = TRUE, collapside = TRUE,
@@ -103,10 +102,23 @@ ui <- dashboardPage(skin =  "purple",
                                 fluidRow(
                                   box(
                                     title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
-                                    tableOutput("table1"),
+                                    tableOutput("table1"))),
+                                  fluidRow(
+                                    box(
+                                      title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                      plotOutput("plot2")), 
+                                    box(
+                                      title ="Cashflow", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                      plotOutput("plot3")),
+                                    box(
+                                      title ="PLS", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                      plotOutput("plot4")),
+                                 # box(
+                                 #   title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                 #   plotOutput("plot5")),
                                   ),
-                                  tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:30px;",style = "color: black;")
-                        )),
+                                  tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:25px;",style = "color: black;")
+                        ),
                         # Second tab content
                         tabItem(tabName = "The Project",
                                 h2("Widgets tab content"),
