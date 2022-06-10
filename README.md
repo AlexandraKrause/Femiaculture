@@ -11,7 +11,7 @@ Within this master thesis, I applied a literature research and the Decision Anal
 💬 and furthermore scientists can adapt the core code ...
 
 - for farm women 
-- for participants
+- for Decision Analysis workshop participants
 - for illiterates
 - for other projects
 
