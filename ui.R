@@ -46,7 +46,7 @@ ui <- dashboardPage(skin =  "purple",
                                     p(" This website was build during a master thesis focusing on factors influencing rural farm-women's empowerment.
                                       Literature research was conducted, and experts were asked and conferences were visited to understand the underlying 
                                       empowerment system.
-                                      A model was made, which visualized the system (see the  \"Map\"-section.). 
+                                      A model was made, which visualized the system (see the  \"Map\"-section). 
                                       Later, the Decision Analysis methodology was applied to conduct a generalized statistical model, 
                                       suggesting it as a measurement technique of the researched factors. 
                                       But Decision Analysis also bears the possibility for actual change in the form of information for farm women.
@@ -55,15 +55,19 @@ ui <- dashboardPage(skin =  "purple",
                                       rural women's user needs. Find more information in my master thesis."),
                                     p("Please try it out yourself: You see the initial graph left on the page - if you changed the values on the slider, 
                                       you see the chart changing (if not, please reload the page).
-                                      Beneath the sliders and the text, a table also shows the current values.
                                       So, what should a farm women decide to do? 
                                       Should she empower herself or choose not to change her status quo situation?
-                                      Please use the slider and see how the graph changes: Depending on the amount of money the farm woman could earn,
-                                      she should decide on eather the one or the other option. 
+                                      Please use the slider and see how the graph changes: Focus on the x-axis, which shows the monetary range
+                                      farm women can expect for either option. Depending on the amount of money the farm woman could earn,
+                                      she should decide on either the one or the other option. 
                                       Also, the decision is influenced by the costs of the influencing factors like education, the outcome benefits like
                                       health and food/ nutrition, and the risk of being unsafe.
-                                      As you see, input estimates are needed: Well estimated numbers to insert into such models."),
-                                    p("To find out more, please click on \"The Project\" and read the following texts on this website."),
+                                      As you see, input estimates are needed: Well estimated numbers to insert into such models.
+                                      Since the model is run 10.000 times and 
+                                      coincidences are also calculated, the visual might look a bit different each time you use the application.
+                                      Beneath the sliders and the text, a table also shows the current values."),
+                                    p("To find out more, please click on \"The Project\" and read the following texts on this website.
+                                      Down on this page further calculatons can be done. Find further information in my master thesis."),
                                     div(
                                       # use HTML by wrapping it with this function. 
                                       # Use a bootstrap or Font Awesome icons 
@@ -113,9 +117,15 @@ ui <- dashboardPage(skin =  "purple",
                                     box(
                                       title ="PLS", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                       plotOutput("plot4")),
-                                 # box(
-                                 #   title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                 #   plotOutput("plot5")),
+                                   #box(
+                                   #  title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                   #  plotOutput("plot5")),
+                                   #box(
+                                   #  title ="EVPI Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
+                                   #  tableOutput("table2"))
+                                   #EVPI was not by default included into the shiny app, since its calculation
+                                   #takes very long.
+                                   #The hashtags have to be eliminated within this source code to make it work.
                                   ),
                                   tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:25px;",style = "color: black;")
                         ),
