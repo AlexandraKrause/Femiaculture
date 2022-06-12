@@ -11,10 +11,8 @@ decision_function <- function(x, varnames){
   
   #Risk
   
-  safety_payout <- chance_event(safety_risk, 1, 0, n = payout_months,
-                                one_draw =TRUE)
-  safety_inv <- chance_event(safety_risk, 1, 0, n = investment_months,
-                             one_draw =TRUE)
+  safety_payout <- chance_event(safety_risk, 1, 0, n = payout_months)
+  safety_inv <- chance_event(safety_risk, 1, 0, n = investment_months)
   
   #Education
   Education_investment_A <-Education_investment * (1-safety_inv)
@@ -102,30 +100,22 @@ decision_function <- function(x, varnames){
 
   ##Status Quo pathway##
   
-#  PartA <- SQ_Workforce_payout + SQ_Resources_payout 
-#  PartB <- SQ_Resources_investment + SQ_Workforce_investment 
-#  + SQ_Husband_Workforce_investment
-#  Profit_SQ <- (PartA -PartB)
-  
-  
-  PartA <- (SQ_Workforce_payout
-            + SQ_Resources_payout)*safety_payout
-  PartB <- SQ_Resources_investment 
-           + SQ_Workforce_investment 
-           + SQ_Husband_Workforce_investment
+  PartA <- SQ_Workforce_payout + SQ_Resources_payout 
+  PartB <- SQ_Resources_investment + SQ_Workforce_investment 
+  + SQ_Husband_Workforce_investment
   Profit_SQ <- (PartA -PartB)
   
-#It can be dangerous to use the money for herself, instead of the family.
-#Women might be dependent on their husbands for health care and food. 
-#This calculation shows how much money a woman would
-#have for health care and food investments (= workforce investment)
+# It can be dangerous to use the money for herself, instead of the family.
+# Women might be dependent on their husbands for health care and food. 
+# This calculation shows how much money a woman would
+# have for health care and food investments (= workforce investment)
   
 
 ### Estimate the NPV from the model ###
   
 #Computing the Status Quo NPV (Net present value)#
   
-  NPV_no_empowerment_branch <- discount(Profit_SQ,
+NPV_no_empowerment_branch <- discount(Profit_SQ,
                             discount_rate = discount_rate, calculate_NPV = TRUE) 
 
 
@@ -133,22 +123,27 @@ decision_function <- function(x, varnames){
 
 ##Empowerment pathway##
 
-  PartA <- (Economy_payout
-            + Empowerment_Resources_payout  
-            + Empowerment_Workforce_payout)*safety_payout
-  PartB1 <- Empowerment_Resources_investment  
-            + Empowerment_Workforce_investment
-  PartB2 <- (Education_investment + Economy_investment
-             + Husband_Empowerment_Workforce_investment)*safety_inv
-  
-  PartB <- PartB1 + PartB2
+PartA <- Economy_payout + Empowerment_Resources_payout + 
+         Empowerment_Workforce_payout
+PartB <- Education_investment  
+         + Economy_investment + Empowerment_Resources_investment + 
+         Empowerment_Workforce_investment
+         + Husband_Empowerment_Workforce_investment
 
-  Empowerment_profit <-  (PartA - PartB)
+# Safety risks occur for: Education and economy investments since time away
+# from female connotated tasks might risk violence. 
+# having her own money and not giving it to the husband or family might also
+# be a risk for violence. 
+
+# Husband's investment into food and health care (workforce investment)
+# might be smaller within the empowerment pathway than status quo.
+
 
 ### Estimate the NPV from the model ####
 
 #Computing the Empowerment NPV (Net present value)#
 
+Empowerment_profit <-  (PartA - PartB)
 
 NPV_Empowerment_profit <- discount(Empowerment_profit,
                           discount_rate = discount_rate, calculate_NPV = TRUE)
@@ -167,10 +162,6 @@ return(list(NPV_no_empowerment_branch =  NPV_no_empowerment_branch,
 }
 
 #### Run the Monte Carlo simulation using the model function ####
-#Use the reactive function to have  shiny app that updates itself when the user 
-#changes values. Below this part, the values need to be inserted which
-#a user should be able to change. Above this function, all Decision Analysis
-#code parts that should not be changed are inserted.
 
 server <- function(input,output) {
   
@@ -266,22 +257,25 @@ server <- function(input,output) {
              label = as.character(label),
              Description = as.character(Description))
     
-# The input estimates are:
-#10,1,50,30,20,30,200,50,30,50,300,
-#50,10,1,1,9,3,0.5
+    #10,1,50,30,20,30,200,50,30,50,300,
+    #50,10,1,1,9,3,0.5
     
-#50,20,200,100,90,100,300,100,100,
-#100,1000,100,50,1,1,9,3,0.5
+    #50,20,200,100,90,100,300,100,100,
+    #100,1000,100,50,1,1,9,3,0.5
     
   })
-  # Table showing the values, updating itself when the user changes them.
+  
   output$table1 <- renderTable({
     dataSource()
   })
   
-
   chile_mc_simulation <- reactive({
     
+#    chile_mc_simulation <- mcSimulation(
+#      estimate = as.estimate(dataSource()),
+#      model_function = model_function,
+#      numberOfModelRuns = 800,
+#      functionSyntax = "plainNames"
       
       chile_mc_simulation <- mcSimulation(
         estimate = as.estimate(dataSource()),
@@ -296,7 +290,6 @@ server <- function(input,output) {
     
   })
   
-  #Net present value
   
   output$plot1 <- renderPlot({
     
@@ -308,75 +301,6 @@ server <- function(input,output) {
                                                    "gray34", "gray35", "gray36", "gray37"),
                                         base_size = 13)
   })
-  #Boxplot 
   
-  output$plot2 <- renderPlot({
+}
 
-decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(), 
-                                    vars = c("NPV_decision_profit_with_empowerment"
-                                    ),
-                                    method = 'boxplot', 
-                                    base_size = 7)
-  })
-  #Cashflow
-  
-  output$plot3 <- renderPlot({
-  
-  Cashflow <- plot_cashflow(mcSimulation_object = chile_mc_simulation(),
-                            cashflow_var_name = "Cashflow_decision_empowerment",
-                            x_axis_name = "Month",
-                            y_axis_name = "Cashflow in Dollar",
-                            color_25_75 = "green4",
-                            color_5_95 = "green1",
-                            color_median = "red")
-  Cashflow
-  
-  })
-  #PLS (Partial least square regression)
-  
-  output$plot4 <- renderPlot({
-    
-  pls_result_1 <- plsr.mcSimulation(object = chile_mc_simulation(),
-                                    resultName = "NPV_decision_profit_with_empowerment",
-                                    ncomp = 1)
-  
-  plot_pls(pls_result_1, threshold = 0.8, input_table = dataSource())
-  
-  })
-  
-  #EVPI Table
-  
-#  output$table2 <- renderTable({
-#  mcSimulation_table <- data.frame(chile_mc_simulation()$x,
-#                                 chile_mc_simulation()$y[1:3])
-#  mcSimulation_table
-
-
-#})
-
-  #EVPI Plot
-  
-#  output$plot5 <- renderPlot({
-    
-#  mcSimulation_table <- data.frame(chile_mc_simulation()$x,
-#                                     chile_mc_simulation()$y[1:3])
-  
-#  plot_evpi<-plot_evpi((multi_EVPI(mc = mcSimulation_table, 
-#                                   first_out_var = "NPV_Empowerment_profit")
-#  ),
-#                       decision_vars = "NPV_decision_profit_with_empowerment")
-#  plot_evpi
-  
-
-
-  #The evpi part of the function was:
-  
-  #evpi <- multi_EVPI(mc = mcSimulation_table, 
-  #                   first_out_var = "NPV_Empowerment_profit")
-  
-#EVPI was not by default included into the shiny app, since its calculation
-#takes very long.
-#The hashtags have to be eliminated within this source code to make it work.
-
-#  })
-  }
