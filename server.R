@@ -1,5 +1,21 @@
 #### Building the model ####
 
+#For this application, a shiny dashboard is needed.
+#It consists of the following parts:
+#For the ui: 
+#library(shinydashboard)
+
+#ui <-dashboardPage(
+#  dashboardHeader(),
+#  dashboardSidebar(),
+#  dashboardBody()
+#)
+
+#For server:
+#server <- function(input, output) { }
+
+
+
 #To see the EVPI within the app, a programmer must remove the hashtags
 #within the computation in server.R  and the box within the ui.R.
 #Code of the EVPI box:
