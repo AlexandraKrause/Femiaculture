@@ -1,3 +1,15 @@
+#install.packages("shiny")
+#install.packages("shinydashboard")
+#install.packages("readr")
+#install.packages("decisionSupport")
+#install.packages("DiagrammeR")
+#install.packages("tidyverse")
+#install.packages("ggplot2")
+#install.packages("plyr")
+#install.packages("dplyr")
+#install.packages("rsconnect")
+
+
 library(shiny)
 library(shinydashboard)
 library(readr)
@@ -42,14 +54,14 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title = "Femiaculture", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 6, 
-                                    tags$strong("Welcome to Femiaculture", style = "font-size:20px;"),
+                                    tags$strong("Welcome To Femiaculture", style = "font-size:20px;"),
                                     p(" This website was build during a master thesis focusing on factors influencing rural farm-women's empowerment.
                                       Literature research was conducted, and experts were asked and conferences were visited to understand the underlying 
                                       empowerment system.
-                                      A model was made, which visualized the system (see the  \"Map\"-section). 
+                                      A model was made, which visualizes the system (see the  \"Map\"-section). 
                                       Later, the Decision Analysis methodology was applied to conduct a generalized statistical model, 
                                       suggesting it as a measurement technique of the researched factors. 
-                                      But Decision Analysis also bears the possibility for actual change in the form of information for farm women.
+                                      Decision Analysis also bears the possibility for actual change in the form of information for farm women.
                                       By using Shiny apps like these, online information systems can be developed.
                                       Therefore, researchers need to adapt the model to local situations and change the website's code to 
                                       rural women's user needs. Find more information in my master thesis."),
@@ -157,8 +169,8 @@ ui <- dashboardPage(skin =  "purple",
                                     Think of sliders for these different input estimates that a female farmer could use to insert the values 
                                     she knows from her own life, adapting the model to her own individual situation.
                                     But not all values can be taken from her experience - he should find some estimates
-                                    already on the website, for example from a local development program or other farmers.
-                                    And for this, experts are needed: farmers, scientists, consultants, and others, who would like to participate in
+                                    already on the website, for example derived from a case study of a local development.
+                                    And for this, experts are needed: Other farmers, scientists, consultants, and others, who would like to participate in
                                     a workshop and fill out questionnaires to give these estimates. 
                                     Together with values from literature research, very good estimates 
                                     can be found. And luckily, the results are readily available for all decision-makers, workshop participants,
@@ -177,11 +189,12 @@ ui <- dashboardPage(skin =  "purple",
                                   title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                   width = 12, align ="center",
                                   column(10, offset = 1,
-                                         tags$strong("The Impact pathway for Empowerment based on an economic assessment."),
+                                         tags$strong("The Impact Pathway For Empowerment Based On An Economic Assessment."),
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
-                                         img(src = "impact_pathway1.png", 
-                                             width="600", 
-                                             height="339")# insert image :) src stands for source, url is ok. 
+                                         img(src = "impact_pathway1.png",
+                                             width="1000"
+                                             )
+                                         # insert image :) src stands for source, url is ok. 
                                          #menuItem("Loopy1", icon = icon("pencil-alt"),
                                          #         href = "https://bit.ly/34gcgaQ")
                                   )),
@@ -218,7 +231,7 @@ ui <- dashboardPage(skin =  "purple",
                                     Instead of selling chickens like in the example above, she might process foods and sell these. 
                                     She might also find a payed job where she does not need to buy and sell agricultural resources
                                     (e.g., an off-farm job, being employed) and can invest in other goods directly. 
-                                    For this, the underlying R code neds to undergo minor changes by the scientist.
+                                    For this, the underlying R code needs to undergo minor changes by the scientist.
                                     Different researched outputs like investments in children's education or clothes
                                     could also be included by adapting the actual model.
                                     The \"Workforce\" model part
@@ -232,7 +245,7 @@ ui <- dashboardPage(skin =  "purple",
                                     Scientists can run the model for several different options using different input estimates. 
                                     Training programs, including women's groups, focusing on women's market access,
                                     or emphasizing discussing gender relations with males
-                                    could have different impacts on the empowerment scenarios. Heterogenous groups of females
+                                    could have diverse impacts on the empowerment scenarios. Heterogenous groups of females
                                     including minorities like migrants or disabled women could be addressed by tailoring the 
                                     decision to them. Scientists can feed the model with all kinds of input estimates. 
                                     For more severe changes, the underlying code can be easily adjusted to several research interests.
@@ -267,8 +280,8 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12,align ="center",
                                   column(10, offset = 1,
                                          img(src = "impact_pathway-status-quo.png",
-                                             width="600", 
-                                             height="274"))),
+                                             width="1000"
+                                             ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
@@ -278,14 +291,14 @@ ui <- dashboardPage(skin =  "purple",
                                     can be worse or less. But the general disadvantages stay the same. Women are often not paid for
                                     their farm work as well as their domestic work. Even if they manage their own land, they still have to carry the burden
                                     of domestic work and are often expected to neglect their own economic farm work for their husband's farm or household needs.
-                                    In other cases, women have to give all or parts of their income, derived from their own agricultural resources, to their husbands.
+                                    In other cases, females have to give all or parts of their income, derived from their own agricultural resources, to their husbands.
                                     Women might be allowed to gather few incomes by selling small amounts of farm goods. 
                                     But on the one hand, the economic value might be minimal
                                     and on the other women might not be able to spend it on their own needs, but only on their families.
                                     So, the first part,\"Resources\", is about gaining agricultural resources and benefitting from them monetarily.
                                     But it can also include other resources that are investigated within the local project (see tthe Section of changing status quo
                                     for further information."),
-                                    tags$strong("Food and health care"),
+                                    tags$strong("Food And Health Care"),
                                     p("Also, in various contexts, men who earn the family's money share less food with their wives, 
                                     especially when having one or more other wives. This can also be true for the children. It means that
                                     there is less money for these investments than there is within the Empowerment pathway."),
@@ -298,15 +311,18 @@ ui <- dashboardPage(skin =  "purple",
                                     p(" As visible in the graph, the main obstacles of being not empowered are life-threatening. 
                                     But these obstacles are also very much dependent on the local context and the chosen local scenario. The level
                                     of empowerment can be very different, and so is the position of females in families, their decision-making power,
-                                    and their right to physical and psychological integrity. Not being empowered in the worst cases means the lack of human rights,
+                                    and their right to physical and psychological integrity. Not being empowered in the worst cases means the lack of important rights,
                                     and cuts of these rights can be seen in various local contexts and ladders of empowerment. Unfortunately, if the woman herself 
                                     has no money for health care and her husband is not paying for it, her health situation is in danger. 
                                     This obviously also depends on local laws and health care provisions.
-                                    The husband can also deny access to nutritious food, e.g., by not allowing his wife to grow this food in his fields since
+                                    Her husband can also deny access to nutritious food, e.g., by not allowing his wife to grow this food in his fields since
                                     it lowers his economic success. He could also spend money on other assets meant for himself instead of his family."),
                                     
                                     p(" \"Workforce\" is calculated by investments into health care and nutritious food, possibly resulting
-                                    in more or less monthly work hours doing farm and domestic tasks. A women's life expectancy is also dependent on these investments and could be measured in monthly workforce hours to compare an empowered situation with health
+                                    in more or less monthly work hours doing farm and domestic tasks. Several studies show that work ability
+                                    decreases for people suffreing from illnesses.
+                                    A women's life expectancy is also dependent on these investments 
+                                    and could be calculated in monthly workforce hours to compare an empowered situation with health
                                     care and food supply against a situation without these assets.
                                     Health risks can also include children when these risks are, for example, connected with missing obstetrics. 
                                     Depending on local and individual cases, a husband might also be willing to spend a certain amount of money
@@ -328,8 +344,8 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12, align ="center",
                                   column(10, offset = 1,
                                          img(src = "impact pathway-emp-pathway.png",
-                                             width="800", 
-                                             height="101"))),
+                                             width="1000"
+                                             ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
@@ -379,7 +395,7 @@ ui <- dashboardPage(skin =  "purple",
                                     associated with male income generation, so that only smaller amounts might be gathered without facing inner-household violence."),
                                     tags$strong("The Seperation Into Workforce And Agricultural Resources"),
                                     p("With agricultural resource allocation, farm women can invest in other goods like health care services. 
-                                    A husband might also be willing to spend money  directly on these investemnets depending on local and individual cases.
+                                    A husband might also be willing to spend money  directly on these investements depending on local and individual cases.
                                     If the option of sticking to the status quo includes the resources food and health care,
                                     these also need to be included in the empowerment pathway to compare the monetary values to each other. Within the model,
                                     these resources are portrayed seperately, since food and health care are included in the next step:\"Workforce\".
@@ -415,7 +431,7 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    tags$code("The social Environmnet"),
+                                    tags$code("The Social Environmnet"),
                                     p("It is affecting all steps of the model as a cost reducer. In its negative form, a complex social environment 
                                     can be incorporated as several options to choose from to limit danger (see the Economic section) or as a risk."),
                                     tags$br(tags$code("The Stop Point")),
@@ -423,7 +439,7 @@ ui <- dashboardPage(skin =  "purple",
                                     or strong backlash exists, can also strengthen problematic inner-household dynamics and masculinities. These can lead as well
                                     as the challenging behavior itself to safety issues. Safety issues have a negative effect on mental and physical health, possibly
                                     even causing death. This decision's riskiness is therefore called ",
-                                      tags$strong("safety"),
+                                      tags$strong("Safety"),
                                       "It should not be a moral question for a scientist to advise a woman on bettering her economic status 
                                     if this could harm her. But the scientist should not decide on this so-called stop for the decision-maker. 
                                     Every woman should have the possibility to determine whether she wants to change her situation. So, whether this risk occurs, 
@@ -467,12 +483,13 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12, align ="center",
                                   column(10, offset = 1,
                                          img(src = "Empowernment_mindmap-only-agriculture.png",
-                                             width="800", 
-                                             height="516"))),
+                                             width="1000" 
+                                             #height="516"
+                                             ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    tags$code("Resources to input into the model"),
+                                    tags$code("Resources To Input Into The Model"),
                                     p("This mind map shows, which resources could be usefull for the \"Resources\" part of the model depending on the research
                                        goal and the local condition. Information technologies like mobile phones can also be part of \"Education/Training\" calculations."
                                     ))),
