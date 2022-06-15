@@ -107,12 +107,15 @@ ui <- dashboardPage(skin =  "purple",
                                     sliderInput("slider11", "Empowerment Workforce payout:", 1, 1000, c(300,1000),step=1),
                                     sliderInput("slider12", "SQ Husband's Workforce investment:", 1, 1000, c(50,100),step=1),
                                     sliderInput("slider13", "Husband's Workforce investment:", 1, 1000, c(10,50),step=1),
-                                    sliderInput("slider14", "Coefficient of variation:", 1, 1, c(1,1),step=0.1),
+                                    tags$br(tags$strong("The following five inputs are constant. Please set the slider
+                                    to one number instead of a range for the application to work properly.", style = "color:purple;")),
+                                    tags$br(tags$strong("Please wait for a second for 
+                                    the error warning to disappear after changing the following inputs.", style = "color:purple;")),
+                                    tags$br(sliderInput("slider14", "Coefficient of variation:", 0, 1, c(1,1),step=0.1)),
                                     sliderInput("slider15", "Discout rate:", 1, 5, c(1,1),step=0.1),
                                     sliderInput("slider16", "Months of receiving money:", 1, 36, c(9,9),step=1),
                                     sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3,3),step=1),
                                     sliderInput("slider18", "Risk Safety:", 0.1, 1, c(0.5,0.5),step=0.1)
-                                    
                                   )),
                                 
                                 fluidRow(
