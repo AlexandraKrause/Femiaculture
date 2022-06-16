@@ -9,6 +9,16 @@
 #The EVPI computation takes much time for the page to load, 
 #so it is initially not included.
 
+##Paramter exclusison##
+#To exclude a parameter like Workforce, 
+#all its parts have to be found. Workforce has 4 parts:
+#  “Empowerment_Workforce_investment”, “Empowerment_Workforce_payout”,
+#“SQ_Husband_Workforce_investment” and 
+#“Husband_Empowerment_Workforce_investment”. 
+#All four parts have to be deleted within the vv function,
+#the pathway calculation and the input estimates, where variable,
+#lower, median,upper, distribution,label and description of
+#these elements have to be deleted.
 
 #### Building the model ####
 ###How this shiny app is basically built###
@@ -159,12 +169,9 @@ decision_function <- function(x, varnames){
   #Risk
   
   safety_payout <- chance_event(safety_risk, 1, 0, n = payout_months,
-                                one_draw =TRUE)
-  safety_inv <- chance_event(safety_risk, 1, 0, n = investment_months,
-                             one_draw =TRUE)
-  safety_inv_sq <- chance_event(safety_risk, 1, 0, n = payout_months,
                                 one_draw =FALSE)
-  
+  safety_inv <- chance_event(safety_risk, 1, 0, n = investment_months,
+                             one_draw =FALSE)
   #Education
   Education_investment_A <-Education_investment * (1-safety_inv)
   
@@ -260,7 +267,7 @@ decision_function <- function(x, varnames){
             + SQ_Resources_payout
             + SQ_Husband_Workforce_investment)*safety_payout
   PartB1 <- SQ_Resources_investment 
-  PartB2 <- (SQ_Workforce_investment)*safety_inv_sq
+  PartB2 <- (SQ_Workforce_investment)*safety_inv
   PartB <- PartB1 + PartB2
   Profit_SQ <- (PartA -PartB)
   

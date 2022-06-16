@@ -58,12 +58,15 @@ ui <- dashboardPage(skin =  "purple",
                                     p(" This website was build during a master thesis focusing on factors influencing rural farm-women's empowerment.
                                       Literature research was conducted, and experts were asked and conferences were visited to understand the underlying 
                                       empowerment system.
-                                      A model was made, which visualizes the system (see the  \"Map\"-section). 
-                                      Later, the Decision Analysis methodology was applied to conduct a generalized statistical model, 
+                                      A model based on the literature reserach was made, which visualizes the system (see the  \"Map\"-section). 
+                                      Later, the Decision Analysis methodology (see the  \"Methodology\"-section) was applied to
+                                      conduct a generalized statistical model, 
                                       suggesting it as a measurement technique of the researched factors. 
+                                      So, by using the sliders in the upper part of this page, researchers can use the model for their own case studies.
                                       Decision Analysis also bears the possibility for actual change in the form of information for farm women.
-                                      By using Shiny apps like these, online information systems can be developed.
-                                      Therefore, researchers need to adapt the model to local situations and change the website's code to 
+                                      By using Shiny apps like these, online information systems can be developed also for them.
+                                      Therefore, researchers need to adapt the model to local situations by using the sliders
+                                      and sometimes change the website's code to 
                                       rural women's user needs. Find more information in my master thesis."),
                                     p("Please try it out yourself: You see the initial graph left on the page - if you changed the values on the slider, 
                                       you see the chart changing (if not, please reload the page).
@@ -74,12 +77,13 @@ ui <- dashboardPage(skin =  "purple",
                                       she should decide on either the one or the other option. 
                                       Also, the decision is influenced by the costs of the influencing factors like education, the outcome benefits like
                                       health and food/ nutrition, and the risk of being unsafe.
-                                      As you see, input estimates are needed: Well estimated numbers to insert into such models.
+                                      As you see, input estimates are needed: Well estimated numbers to insert into such models. 
                                       Since the model is run 10.000 times and 
                                       coincidences are also calculated, the visual might look a bit different each time you use the application.
                                       Beneath the sliders and the text, a table also shows the current values."),
                                     p("To find out more, please click on \"The Project\" and read the following texts on this website.
-                                      Down on this page further calculatons can be done. Find further information in my master thesis."),
+                                      Down on this page further calculations like a cashflow can be done. 
+                                      Find further information about these in my master thesis."),
                                     div(
                                       # use HTML by wrapping it with this function. 
                                       # Use a bootstrap or Font Awesome icons 
@@ -94,55 +98,92 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title = "Controls", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    sliderInput("slider1", "Education investment:", 1, 1000, c(10,50),step=1),
-                                    sliderInput("slider2", "Economy investment:", 1, 1000, c(1,20),step=1),
-                                    sliderInput("slider3", "Economy payout:", 1, 1000, c(50,200),step=1),
-                                    sliderInput("slider4", "Status Quo Resources investment:", 1, 1000, c(30,100),step=1),
-                                    sliderInput("slider5", "Status Quo Resources payout:", 1, 1000, c(20,90),step=1),
-                                    sliderInput("slider6", "Empowerment Resources investment:", 1, 1000, c(30,100),step=1),
-                                    sliderInput("slider7", "Empowerment Resources payout:", 1, 1000, c(200,300),step=1),
-                                    sliderInput("slider8", "Status Quo Workforce investment:", 1, 1000, c(50,100),step=1),
-                                    sliderInput("slider9", "Status Quo Workforce payout:", 1, 1000, c(30,100),step=1),
-                                    sliderInput("slider10", "Empowerment Workforce investment:", 1, 1000, c(50,100),step=1),
-                                    sliderInput("slider11", "Empowerment Workforce payout:", 1, 1000, c(300,1000),step=1),
-                                    sliderInput("slider12", "SQ Husband's Workforce investment:", 1, 1000, c(50,100),step=1),
-                                    sliderInput("slider13", "Husband's Workforce investment:", 1, 1000, c(10,50),step=1),
+                                    p("Within the model, a farm woman who chooses to change her status quo first must 
+                                      invest in some form of education or training. This investment is estimated here."),
+                                    tags$br(sliderInput("slider1", "Education investment:", 1, 1000, c(10,50),step=1)),
+                                    p("Afterward, an investment in the form of a credit,
+                                      a (new) paid job, or additional income is estimated.
+                                      This investment includes every monthly expanse that leads to an economic payoff in the future, 
+                                      like transport or child care costs. 
+                                      Education about this investment possibility took place within the first step"),
+                                    tags$br(sliderInput("slider2", "Economy investment:", 1, 1000, c(1,20),step=1)),
+                                    p("Here the range of the monetary gain from the prior investment is calculated."),
+                                    tags$br(sliderInput("slider3", "Economy payout:", 1, 1000, c(50,200),step=1)),
+                                    p("Here, the agricultural resource investment range per month is calculated
+                                      for the status quo option - a life living from farm resources without
+                                      empowerment intervention."),
+                                    tags$br(sliderInput("slider4", "Status Quo Resources investment:", 1, 1000, c(30,100),step=1)),
+                                    p("Following is the monthly payout of the resource investment a farm woman can expect while 
+                                      not changing the status quo."),
+                                    tags$br(sliderInput("slider5", "Status Quo Resources payout:", 1, 1000, c(20,90),step=1)),
+                                    p("This could be chicken, seeds, processing material, technology, etc."),
+                                    tags$br(sliderInput("slider6", "Empowerment Resources investment:", 1, 1000, c(30,100),step=1)),
+                                    p("Following is the monthly payout of the resource investment a farm woman can expect while 
+                                      changing her situation. This could be monetary gains from eggs, processed food and other."),
+                                    tags$br(sliderInput("slider7", "Empowerment Resources payout:", 1, 1000, c(200,300),step=1)),
+                                    p("Following are the monthly investments a farm woman could make on nutritious food and health care
+                                    investments like contraceptives or savings for doctor's visits while in a status quo scenario."),
+                                    tags$br(sliderInput("slider8", "Status Quo Workforce investment:", 1, 1000, c(50,100),step=1)),
+                                    p("Investments in nutritious food and health care can lead to higher workforce ability. 
+                                      A farm woman's daily work hours are calculated and put in monetary values. 
+                                      Here the value ranges for the status quo pathway are calculated."),
+                                    tags$br(sliderInput("slider9", "Status Quo Workforce payout:", 1, 1000, c(30,100),step=1)),
+                                    p("The monthly investments a farm woman could make on nutritious food and health care
+                                    investments like contraception or savings for doctor's visits while being in an empowerment scenaro."),
+                                    tags$br(sliderInput("slider10", "Empowerment Workforce investment:", 1, 1000, c(50,100),step=1)),
+                                    p("Investments into nutritious food and health care can lead to higher workforce ability. 
+                                      A farm woman's daily work hours are calculated here and put in monetary values. 
+                                      Here the value ranges for the empowerment pathway are calculated."),
+                                    tags$br(sliderInput("slider11", "Empowerment Workforce payout:", 1, 1000, c(300,1000),step=1)),
+                                    p("A husband might share some money with this wife, the farm woman, for health care or food investments.
+                                    This money is calculated here for the status quo pathway."),
+                                    tags$br(sliderInput("slider12", "SQ Husband's Workforce investment:", 1, 1000, c(50,100),step=1)),
+                                    p("The Husband's workforce investment for the empowerment pathway is calculated here."),
+                                    tags$br(sliderInput("slider13", "Husband's Workforce investment:", 1, 1000, c(10,50),step=1)),
+                                  ###
                                     tags$br(tags$strong("The following five inputs are constant. Please set the slider
                                     to one number instead of a range for the application to work properly.", style = "color:purple;")),
-                                    tags$br(tags$strong("Please wait for a second for 
+                                    tags$br(tags$strong("Please wait a second for 
                                     the error warning to disappear after changing the following inputs.", style = "color:purple;")),
+                                  tags$br(p("The next value is used for time series that include a variation.")),
                                     tags$br(sliderInput("slider14", "Coefficient of variation:", 0, 1, c(1,1),step=0.1)),
-                                    sliderInput("slider15", "Discout rate:", 1, 5, c(1,1),step=0.1),
-                                    sliderInput("slider16", "Months of receiving money:", 1, 36, c(9,9),step=1),
-                                    sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3,3),step=1),
-                                    sliderInput("slider18", "Risk Safety:", 0.1, 1, c(0.5,0.5),step=0.1)
+                                    p("The discount rate can indicate the decision maker's willingness
+                                    to invest in long-term outcomes."),
+                                    tags$br(sliderInput("slider15", "Discout rate:", 1, 5, c(1,1),step=0.1)),
+                                    p("The following two parameters calculate how long a farm woman has to invest
+                                       until she can receive the payback."),
+                                    tags$br(sliderInput("slider16", "Months of receiving money:", 1, 36, c(9,9),step=1)),
+                                    tags$br(sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3,3),step=1)),
+                                    p("Here the percentage risk of unsafe conditions ending the empowerment possibility 
+                                      and stopping the intervention is calculated."),
+                                    tags$br(sliderInput("slider18", "Risk Safety:", 0.1, 1, c(0.5,0.5),step=0.1))
                                   )),
                                 
                                 fluidRow(
                                   box(
                                     title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
                                     tableOutput("table1"))),
-                                  fluidRow(
-                                    box(
-                                      title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                      plotOutput("plot2")), 
-                                    box(
-                                      title ="Cashflow", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                      plotOutput("plot3")),
-                                    box(
-                                      title ="PLS", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                      plotOutput("plot4")),
-                                   #box(
-                                   #  title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                   #  plotOutput("plot5")),
-                                   #box(
-                                   #  title ="EVPI Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
-                                   #  tableOutput("table2"))
-                                   #EVPI was not by default included into the shiny app, since its calculation
-                                   #takes very long.
-                                   #The hashtags have to be eliminated within this source code to make it work.
-                                  ),
-                                  tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:25px;",style = "color: black;")
+                                fluidRow(
+                                  box(
+                                    title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                    plotOutput("plot2")), 
+                                  box(
+                                    title ="Cashflow", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                    plotOutput("plot3")),
+                                  box(
+                                    title ="PLS", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                    plotOutput("plot4")),
+                                  #box(
+                                  #  title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
+                                  #  plotOutput("plot5")),
+                                  #box(
+                                  #  title ="EVPI Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
+                                  #  tableOutput("table2"))
+                                  #EVPI was not by default included into the shiny app, since its calculation
+                                  #takes very long.
+                                  #The hashtags have to be eliminated within this source code to make it work.
+                                ),
+                                tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:25px;",style = "color: black;")
                         ),
                         # Second tab content
                         tabItem(tabName = "The Project",
@@ -196,7 +237,7 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
                                          img(src = "impact_pathway1.png",
                                              width="1000"
-                                             )
+                                         )
                                          # insert image :) src stands for source, url is ok. 
                                          #menuItem("Loopy1", icon = icon("pencil-alt"),
                                          #         href = "https://bit.ly/34gcgaQ")
@@ -206,7 +247,7 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     tags$code("General Overview"),
-                                    p(" During my thesis, I researched factors influencing rural farm women's empowerment in agricultural development.
+                                    p("During my thesis, I researched factors influencing rural farm women's empowerment in agricultural development.
                                   I did a literature research and a decision analysis to assess the unequal
                                   resource distribution between male and female farmers and to evaluate how gender can be captured in modeling efforts.
                                   Women contribute not only to farm work, they are also often the primary providers of care for children and elderly family members,
@@ -274,7 +315,7 @@ ui <- dashboardPage(skin =  "purple",
                                     
                                   )),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
-                                ),
+                        ),
                         #fifth tbl content
                         tabItem(tabName = "Status",
                                 h3("Status"),
@@ -284,7 +325,7 @@ ui <- dashboardPage(skin =  "purple",
                                   column(10, offset = 1,
                                          img(src = "impact_pathway-status-quo.png",
                                              width="1000"
-                                             ))),
+                                         ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
@@ -301,11 +342,11 @@ ui <- dashboardPage(skin =  "purple",
                                     So, the first part,\"Resources\", is about gaining agricultural resources and benefitting from them monetarily.
                                     But it can also include other resources that are investigated within the local project (see tthe Section of changing status quo
                                     for further information."),
-                                    tags$strong("Food And Health Care"),
-                                    p("Also, in various contexts, men who earn the family's money share less food with their wives, 
+                                            tags$strong("Food And Health Care"),
+                                            p("Also, in various contexts, men who earn the family's money share less food with their wives, 
                                     especially when having one or more other wives. This can also be true for the children. It means that
                                     there is less money for these investments than there is within the Empowerment pathway."),
-                                    p("Another problem is when men who are already restricting their wives from earning money 
+                                            p("Another problem is when men who are already restricting their wives from earning money 
                                     are not paying for their wives' health care.
                                     So, these women have less or no money for these investments. In the end, the outcome first means less money for women's
                                     quite basic needs like food and health care. 
@@ -336,7 +377,7 @@ ui <- dashboardPage(skin =  "purple",
                                     from a job away from farm, need to be compared to the decision option to change the status quo.")
                                   )),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
-                                ),
+                        ),
                         #oder 700 und 320
                         
                         #sixt tbl content
@@ -348,7 +389,7 @@ ui <- dashboardPage(skin =  "purple",
                                   column(10, offset = 1,
                                          img(src = "impact pathway-emp-pathway.png",
                                              width="1000"
-                                             ))),
+                                         ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
@@ -419,7 +460,7 @@ ui <- dashboardPage(skin =  "purple",
                                     might therefore in some contexts be welcomed by male family members as well. This topic will be further discussed in the", tags$em(" risk section"),
                                       "below.
                                     "))),
-                                  tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
+                                tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         #seventh tab content
                         tabItem(tabName = "Risk",
@@ -454,7 +495,7 @@ ui <- dashboardPage(skin =  "purple",
                                     What should be marked in this context is that also the option to stick to a status quo could lead to health risks since they are a major issue here." 
                                       
                                     ))),
-                                  tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
+                                tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         # eight tab content
                         tabItem(tabName = "Map",
@@ -467,7 +508,10 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$strong("It all comes down to the Decision Analysis Impact pathway",style = "font-size:20px;"),
                                          tags$p("which should be adopted with workshop participants to
                                                 tailor it to the local situation."),
-                                         tags$p("The pathway is the result of a literature analysis and the numbers stand for sources. Find the excel literature sources table here:", 
+                                         tags$p("The pathway is the result of literature analysis.
+                                                 Minuses and pluses show a positive or negative impact of a factor."),
+                                                 tags$p("The numbers stand for sources. 
+                                                 Find the excel literature sources table that connects the source numbers to further source information here:", 
                                                 (tags$a(href="https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx", "https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx")),
                                                 tags$p("And find statistics regarding the literature review here:",
                                                        tags$a(href="https://github.com/AlexandraKrause/Thesis#readme", "https://github.com/AlexandraKrause/Thesis#readme"))),
@@ -476,7 +520,7 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$br(img(src = "Extended-Decision-Analysis-Impact-Pathway-06.2022.drawio.png", align ="center"))
                                   ))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
-                                ),
+                        ),
                         
                         
                         tabItem(tabName = "Resources",
@@ -488,7 +532,7 @@ ui <- dashboardPage(skin =  "purple",
                                          img(src = "Empowernment_mindmap-only-agriculture.png",
                                              width="1000" 
                                              #height="516"
-                                             ))),
+                                         ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
@@ -497,7 +541,7 @@ ui <- dashboardPage(skin =  "purple",
                                        goal and the local condition. Information technologies like mobile phones can also be part of \"Education/Training\" calculations."
                                     ))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
-                                ),
+                        ),
                         # size 700 and 451
                         #ninth tab content
                         tabItem(tabName = "Impressum",
