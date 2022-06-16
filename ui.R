@@ -279,7 +279,7 @@ ui <- dashboardPage(skin =  "purple",
                                     Different researched outputs like investments in children's education or clothes
                                     could also be included by adapting the actual model.
                                     The \"Workforce\" model part
-                                    means exaggerating working hours through investing in health, namely health care
+                                    means extended working hours through investing in health, namely health care
                                     and enough nutritious food. This can include different kinds of farm or domestic work.
                                     Also, her husband might share responsibility for these investments,
                                     resulting in the input variable \"Husband's Workforce investment\".
@@ -432,7 +432,7 @@ ui <- dashboardPage(skin =  "purple",
                                     tags$code("The Next Step Is the Allocation Of Resources "),
                                     p("With the money that was gathered within the former step, 
                                     an allocation of several resources should be possible. First agricultural resources like trees, livestock, crops 
-                                    water, breeding achievements can be allocated. Information technologies, possibly exaggerating agricultural knowledge,
+                                    water, breeding achievements can be allocated. Information technologies, possibly exceeding agricultural knowledge,
                                     like mobile phones can also belong to the model part\"Education/Training\". 
                                     It needs to be mentioned that resources are often seperated into male and female resources,
                                     depending on their prestige, limiting women's access to benefit from their monetary value. High economic benefit might also be 
