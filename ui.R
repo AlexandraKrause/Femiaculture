@@ -49,19 +49,24 @@ ui <- dashboardPage(skin =  "purple",
                                 fluidRow(
                                   box(
                                     title ="NPVs", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot1"), 
+                                    plotOutput("plot1", width="100%")
                                   ),
                                   box(
                                     title = "Femiaculture", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 6, 
-                                    tags$strong("Welcome To Femiaculture", style = "font-size:20px;"),
-                                    p(" This website was build during a master thesis focusing on factors influencing rural farm-women's empowerment.
-                                      Literature research was conducted, and experts were asked and conferences were visited to understand the underlying 
-                                      empowerment system.
-                                      A model based on the literature reserach was made, which visualizes the system (see the  \"Map\"-section). 
-                                      Later, the Decision Analysis methodology (see the  \"Methodology\"-section) was applied to
-                                      conduct a generalized statistical model, 
-                                      suggesting it as a measurement technique of the researched factors. 
+                                    tags$strong("Welcome To Femiaculture by Alexandra Krause", style = "font-size:20px;"),
+                                    tags$br(tags$i(p("If the app looks distorted, please try another browser. Please do not use Windows Edge."))), 
+                                    p("I build this website during my master thesis focusing on factors influencing rural
+                                    farm-women's empowerment.  
+                                    To understand the underlying empowerment system, I conducted
+                                    a literature research, asked experts and visited conferences.
+                                    Furthermore, I developed a model based on the literature reserach, which visualizes the system (see the  \"Map\"-section). 
+                                    Later, I applied the Decision Analysis methodology (see the  \"Methodology\"-section) to
+                                    conduct a generalized statistical model, suggesting it as a 
+                                    measurement technique of the researched factors. See",
+                                    tags$a(href="https://github.com/AlexandraKrause/DA-Code_Femiaculture", "https://github.com/AlexandraKrause/DA-Code_Femiaculture"),
+                                    "for further information."),
+                                    p("
                                       So, by using the sliders in the upper part of this page, researchers can use the model for their own case studies.
                                       Decision Analysis also bears the possibility for actual change in the form of information for farm women.
                                       By using Shiny apps like these, online information systems can be developed also for them.
@@ -100,46 +105,46 @@ ui <- dashboardPage(skin =  "purple",
                                     width = 12,
                                     p("Within the model, a farm woman who chooses to change her status quo first must 
                                       invest in some form of education or training. This investment is estimated here."),
-                                    tags$br(sliderInput("slider1", "Education investment:", 1, 1000, c(10,50),step=1)),
+                                    tags$br(sliderInput("slider1", "Education investment (Dollar/Month):", 1, 1000, c(10,50),step=1)),
                                     p("Afterward, an investment in the form of a credit,
                                       a (new) paid job, or additional income is estimated.
                                       This investment includes every monthly expanse that leads to an economic payoff in the future, 
                                       like transport or child care costs. 
                                       Education about this investment possibility took place within the first step"),
-                                    tags$br(sliderInput("slider2", "Economy investment:", 1, 1000, c(1,20),step=1)),
+                                    tags$br(sliderInput("slider2", "Economy investment (Dollar/Month):", 1, 1000, c(1,20),step=1)),
                                     p("Here the range of the monetary gain from the prior investment is calculated."),
-                                    tags$br(sliderInput("slider3", "Economy payout:", 1, 1000, c(50,200),step=1)),
+                                    tags$br(sliderInput("slider3", "Economy payout (Dollar/Month):", 1, 1000, c(50,200),step=1)),
                                     p("Here, the agricultural resource investment range per month is calculated
                                       for the status quo option - a life living from farm resources without
                                       empowerment intervention."),
-                                    tags$br(sliderInput("slider4", "Status Quo Resources investment:", 1, 1000, c(30,100),step=1)),
+                                    tags$br(sliderInput("slider4", "Status Quo Resources investment (Dollar/Month):", 1, 1000, c(30,100),step=1)),
                                     p("Following is the monthly payout of the resource investment a farm woman can expect while 
                                       not changing the status quo."),
-                                    tags$br(sliderInput("slider5", "Status Quo Resources payout:", 1, 1000, c(20,90),step=1)),
+                                    tags$br(sliderInput("slider5", "Status Quo Resources payout (Dollar/Month):", 1, 1000, c(20,90),step=1)),
                                     p("This could be chicken, seeds, processing material, technology, etc."),
-                                    tags$br(sliderInput("slider6", "Empowerment Resources investment:", 1, 1000, c(30,100),step=1)),
+                                    tags$br(sliderInput("slider6", "Empowerment Resources investment (Dollar/Month):", 1, 1000, c(30,100),step=1)),
                                     p("Following is the monthly payout of the resource investment a farm woman can expect while 
                                       changing her situation. This could be monetary gains from eggs, processed food and other."),
-                                    tags$br(sliderInput("slider7", "Empowerment Resources payout:", 1, 1000, c(200,300),step=1)),
+                                    tags$br(sliderInput("slider7", "Empowerment Resources payout (Dollar/Month):", 1, 1000, c(200,300),step=1)),
                                     p("Following are the monthly investments a farm woman could make on nutritious food and health care
                                     investments like contraceptives or savings for doctor's visits while in a status quo scenario."),
-                                    tags$br(sliderInput("slider8", "Status Quo Workforce investment:", 1, 1000, c(50,100),step=1)),
+                                    tags$br(sliderInput("slider8", "Status Quo Workforce investment (Dollar/Month):", 1, 1000, c(50,100),step=1)),
                                     p("Investments in nutritious food and health care can lead to higher workforce ability. 
                                       A farm woman's daily work hours are calculated and put in monetary values. 
                                       Here the value ranges for the status quo pathway are calculated."),
-                                    tags$br(sliderInput("slider9", "Status Quo Workforce payout:", 1, 1000, c(30,100),step=1)),
+                                    tags$br(sliderInput("slider9", "Status Quo Workforce payout (Dollar/Month):", 1, 1000, c(30,100),step=1)),
                                     p("The monthly investments a farm woman could make on nutritious food and health care
                                     investments like contraception or savings for doctor's visits while being in an empowerment scenaro."),
-                                    tags$br(sliderInput("slider10", "Empowerment Workforce investment:", 1, 1000, c(50,100),step=1)),
+                                    tags$br(sliderInput("slider10", "Empowerment Workforce investment (Dollar/Month):", 1, 1000, c(50,100),step=1)),
                                     p("Investments into nutritious food and health care can lead to higher workforce ability. 
                                       A farm woman's daily work hours are calculated here and put in monetary values. 
                                       Here the value ranges for the empowerment pathway are calculated."),
-                                    tags$br(sliderInput("slider11", "Empowerment Workforce payout:", 1, 1000, c(300,1000),step=1)),
+                                    tags$br(sliderInput("slider11", "Empowerment Workforce payout (Dollar/Month):", 1, 1000, c(300,1000),step=1)),
                                     p("A husband might share some money with this wife, the farm woman, for health care or food investments.
                                     This money is calculated here for the status quo pathway."),
-                                    tags$br(sliderInput("slider12", "SQ Husband's Workforce investment:", 1, 1000, c(50,100),step=1)),
+                                    tags$br(sliderInput("slider12", "SQ Husband's Workforce investment (Dollar/Month):", 1, 1000, c(50,100),step=1)),
                                     p("The Husband's workforce investment for the empowerment pathway is calculated here."),
-                                    tags$br(sliderInput("slider13", "Husband's Workforce investment:", 1, 1000, c(10,50),step=1)),
+                                    tags$br(sliderInput("slider13", "Husband's Workforce investment (Dollar/Month):", 1, 1000, c(10,50),step=1)),
                                   ###
                                     tags$br(tags$strong("The following five inputs are constant. Please set the slider
                                     to one number instead of a range for the application to work properly.", style = "color:purple;")),
@@ -156,7 +161,7 @@ ui <- dashboardPage(skin =  "purple",
                                     tags$br(sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3,3),step=1)),
                                     p("Here the percentage risk of unsafe conditions ending the empowerment possibility 
                                       and stopping the intervention is calculated."),
-                                    tags$br(sliderInput("slider18", "Risk Safety:", 0.1, 1, c(0.5,0.5),step=0.1))
+                                    tags$br(sliderInput("slider18", "Risk Safety [%]:", 0.1, 1, c(0.5,0.5),step=0.1))
                                   )),
                                 
                                 fluidRow(
@@ -166,13 +171,13 @@ ui <- dashboardPage(skin =  "purple",
                                 fluidRow(
                                   box(
                                     title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot2")), 
+                                    plotOutput("plot2", width="100%")), 
                                   box(
                                     title ="Cashflow", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot3")),
+                                    plotOutput("plot3", width="100%")),
                                   box(
                                     title ="PLS", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot4")),
+                                    plotOutput("plot4", width="90%")),
                                   #box(
                                   #  title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                   #  plotOutput("plot5")),
@@ -218,7 +223,7 @@ ui <- dashboardPage(skin =  "purple",
                                     a workshop and fill out questionnaires to give these estimates. 
                                     Together with values from literature research, very good estimates 
                                     can be found. And luckily, the results are readily available for all decision-makers, workshop participants,
-                                    and stakeholders as websites like this or handy apps make them easily accessible.
+                                    and stakeholders as websites like this or mobile apps make them easily accessible.
                                     Please consider taking part in the making of a model and visit the other tabs for more information.
                                     Further information regarding the methodology can be found within my master thesis."),
                                     p("Luedeling, E., & Shepherd, K. (2016). Decision-Focused Agricultural Research. Solutions, 7(5), 46-54.")
@@ -236,7 +241,8 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$strong("The Impact Pathway For Empowerment Based On An Economic Assessment."),
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
                                          img(src = "impact_pathway1.png",
-                                             width="1000"
+                                             width="90%"
+                                             #"1000"
                                          )
                                          # insert image :) src stands for source, url is ok. 
                                          #menuItem("Loopy1", icon = icon("pencil-alt"),
@@ -324,7 +330,8 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12,align ="center",
                                   column(10, offset = 1,
                                          img(src = "impact_pathway-status-quo.png",
-                                             width="1000"
+                                             width="90%"
+                                             #1000"
                                          ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
@@ -388,7 +395,8 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12, align ="center",
                                   column(10, offset = 1,
                                          img(src = "impact pathway-emp-pathway.png",
-                                             width="1000"
+                                             width="90%"
+                                               #"1000"
                                          ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
@@ -470,8 +478,10 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12, align ="center",
                                   column(10, offset = 1,
                                          img(src = "riskmap.png",
-                                             width="400", 
-                                             height="304"))),
+                                             width="40%"
+                                             #width="400", 
+                                             #height="304"
+                                             ))),
                                   box(
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
@@ -530,7 +540,8 @@ ui <- dashboardPage(skin =  "purple",
                                   width = 12, align ="center",
                                   column(10, offset = 1,
                                          img(src = "Empowernment_mindmap-only-agriculture.png",
-                                             width="1000" 
+                                             width="70%"
+                                               #"1000" 
                                              #height="516"
                                          ))),
                                   box(
@@ -566,7 +577,7 @@ ui <- dashboardPage(skin =  "purple",
                                          p("Feel free to visit me at github.com/AlexandraKrause, Find me on twitter: @Al__Krause
                                          or contact me via s7alkrau@uni-bonn.de"),
                                          tags$a(href="https://github.com/AlexandraKrause", "click for github",style = "font-size:20px;"),
-                                         img(src = "uni_logo.png")))
+                                         tags$br(img(src = "uni_logo.png",width="60%"))))
                                 )))
                       
                       
