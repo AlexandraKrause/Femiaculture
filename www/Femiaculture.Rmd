@@ -9,6 +9,5 @@ given-names: "Alexandra"
 #orcid:  https://orcid.org/0000-0002-3308-2757 
 title: "Femiaculture"
 version: 0.1.1
-doi: 10.5281/zenodo.6640203
 date-released: 2022-06-14
 url: "https://github.com/AlexandraKrause/Femiaculture"
