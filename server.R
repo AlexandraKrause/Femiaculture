@@ -167,41 +167,53 @@
 decision_function <- function(x, varnames){
   
   #Risk
+  # safety_payout <- chance_event(safety_risk, 1, 0, n = payout_months, 
+  #                               one_draw =FALSE)
+  # safety_inv <- chance_event(safety_risk, 1, 0, n = investment_months,
+  #                            one_draw =FALSE)
+  safety <- chance_event((1-safety_risk), 1, 0,
+                         n = (payout_months + investment_months))
+  SQ_safety <- chance_event((1-SQ_safety_risk), 1, 0,
+                            n = (payout_months + investment_months))
   
-  safety_payout <- chance_event(safety_risk, 1, 0, n = payout_months,
-                                one_draw =FALSE)
-  safety_inv <- chance_event(safety_risk, 1, 0, n = investment_months,
-                             one_draw =FALSE)
   #Education
-  Education_investment_A <-Education_investment * (1-safety_inv)
   
-  Education_investment <- c(vv(var_mean = Education_investment_A, 
+  Education_investment <- c(vv(var_mean = Education_investment, 
                                var_CV = var_slight, 
                                n = investment_months), rep(0,payout_months))
+  
+  Education_investment <- Education_investment * safety
   #Economy
   
-  Economy_payout_A <- Economy_payout * (1-safety_payout)
-  
-  Economy_payout <- c(rep (0,investment_months), 
-                      vv(var_mean = Economy_payout_A, 
+  Economy_payout <- c(rep(0,investment_months), 
+                      vv(var_mean = Economy_payout, 
                          var_CV = var_slight, 
                          n = payout_months))
   
-  Economy_investment_A <- Economy_investment * (1-safety_inv)
   
-  Economy_investment <- c(vv(var_mean = Economy_investment_A, 
+  #Economy_payout <- Economy_payout * safety
+  
+  
+  Economy_investment <- c(vv(var_mean = Economy_investment, 
                              var_CV = var_slight, 
-                             n = investment_months), rep(0,payout_months))
+                             n = investment_months), rep(0, payout_months))
+  
+  #Economy_investment <- Economy_investment * safety
   
   #Status Quo Resources
   SQ_Resources_investment <- c(vv(var_mean = SQ_Resources_investment, 
                                   var_CV = var_slight, 
                                   n = investment_months), rep(0,payout_months))
   
+  SQ_Resources_investment <- SQ_Resources_investment * SQ_safety
+  
   SQ_Resources_payout <- c(rep (0,investment_months),
                            vv(var_mean = SQ_Resources_payout, 
                               var_CV = var_slight, 
                               n = payout_months))
+  
+  SQ_Resources_payout <- SQ_Resources_payout * SQ_safety
+  
   #Empowerment Resources
   Empowerment_Resources_investment <- c(vv(var_mean = 
                                              Empowerment_Resources_investment, 
@@ -213,33 +225,47 @@ decision_function <- function(x, varnames){
                                     vv(var_mean = Empowerment_Resources_payout, 
                                        var_CV = var_slight, 
                                        n = payout_months))
+  
+  Empowerment_Resources_payout <- Empowerment_Resources_payout * safety
+  
   #Status Quo monthly Workforce
   
-  SQ_Workforce_investment_A <-  SQ_Workforce_investment * (1-safety_inv)
   
-  SQ_Workforce_investment <- c( vv(var_mean = SQ_Workforce_investment_A, 
+  SQ_Workforce_investment <- c( vv(var_mean = SQ_Workforce_investment, 
                                    var_CV = var_slight, 
                                    n = investment_months), 
                                 rep(0,payout_months))
+  
+  SQ_Workforce_investment <- SQ_Workforce_investment * SQ_safety
   
   SQ_Workforce_payout <- c(rep (0,investment_months),
                            vv(var_mean = SQ_Workforce_payout, 
                               var_CV = var_slight, 
                               n = payout_months))
   
+  SQ_Workforce_payout <- SQ_Workforce_payout * SQ_safety
+  
   #Empowerment monthly Workforce
   
+  
   Empowerment_Workforce_investment <- c( vv(var_mean = 
-                                  Empowerment_Workforce_investment, 
-                                  var_CV = var_slight, 
-                                  n = investment_months), rep(0,payout_months))
+                                              Empowerment_Workforce_investment, 
+                                            var_CV = var_slight, 
+                                            n = investment_months), rep(0,payout_months))
+  
+  Empowerment_Workforce_investment <- Empowerment_Workforce_investment * safety
   
   Empowerment_Workforce_payout <- c(rep (0,investment_months),
                                     vv(var_mean = Empowerment_Workforce_payout, 
                                        var_CV = var_slight, 
                                        n = payout_months))
   
-  # Husband's investment
+  Empowerment_Workforce_payout <- Empowerment_Workforce_payout * safety
+  
+  # Husband's investment: Here, the wife is not paying herself.
+  # Instead, a husband is sharing his money with the family, including her, for
+  # the resources food and health care. Therefore, it is calculated as an 
+  # additional payoff.
   
   SQ_Husband_Workforce_investment <-  c(rep (0,investment_months),
                                         vv(var_mean = 
@@ -247,12 +273,17 @@ decision_function <- function(x, varnames){
                                            var_CV = var_slight, 
                                            n = payout_months))
   
+  SQ_Husband_Workforce_investment <- SQ_Husband_Workforce_investment * SQ_safety
+  
+  
   Husband_Empowerment_Workforce_investment <- c(rep (0,investment_months),
                                                 vv(var_mean = 
-                                       Husband_Empowerment_Workforce_investment, 
+                                                     Husband_Empowerment_Workforce_investment, 
                                                    var_CV = var_slight, 
                                                    n = payout_months))
   
+  Husband_Empowerment_Workforce_investment <- 
+  Husband_Empowerment_Workforce_investment * safety
   
   ### Computing the decision and status quo  pathways ###
   
@@ -263,12 +294,13 @@ decision_function <- function(x, varnames){
   #  + SQ_Husband_Workforce_investment
   #  Profit_SQ <- (PartA -PartB)
   
-  PartA <- (SQ_Workforce_payout
-            + SQ_Resources_payout
-            + SQ_Husband_Workforce_investment)*safety_payout
-  PartB1 <- SQ_Resources_investment 
-  PartB2 <- (SQ_Workforce_investment)*safety_inv
-  PartB <- PartB1 + PartB2
+  
+  PartA <- SQ_Workforce_payout
+  + SQ_Resources_payout
+  + SQ_Husband_Workforce_investment
+  
+  PartB <- SQ_Resources_investment + SQ_Workforce_investment
+  
   Profit_SQ <- (PartA -PartB)
   
   #It can be dangerous to use the money for herself, instead of the family.
@@ -282,41 +314,42 @@ decision_function <- function(x, varnames){
   #Computing the Status Quo NPV (Net present value)#
   
   NPV_no_empowerment_branch <- discount(Profit_SQ,
-                       discount_rate = discount_rate, calculate_NPV = TRUE) 
-  
-  
-  ###Decision Pathway###
+                                        discount_rate = discount_rate, calculate_NPV = TRUE) 
   
   ##Empowerment pathway##
   
-  PartA <- (Economy_payout
-            + Empowerment_Resources_payout  
-            + Empowerment_Workforce_payout
-            + Husband_Empowerment_Workforce_investment)*safety_payout
+  PartA <- Economy_payout
+  + Empowerment_Resources_payout  
+  + Empowerment_Workforce_payout
+  + Husband_Empowerment_Workforce_investment
   
   PartB1 <- Empowerment_Resources_investment  
   
-  PartB2 <- (Education_investment + Economy_investment
-             + Empowerment_Workforce_investment)*safety_inv
+  PartB2 <- Education_investment + Economy_investment
+  + Empowerment_Workforce_investment
   
   PartB <- PartB1 + PartB2
   
   Empowerment_profit <-  (PartA - PartB)
+  
   
   ### Estimate the NPV from the model ####
   
   #Computing the Empowerment NPV (Net present value)#
   
   NPV_Empowerment_profit <- discount(Empowerment_profit,
-                            discount_rate = discount_rate, calculate_NPV = TRUE)
-  NPV_decision_profit_with_empowerment <- NPV_Empowerment_profit - 
-    NPV_no_empowerment_branch
+                                     discount_rate = discount_rate,
+                                     calculate_NPV = TRUE)
+  NPV_decision_profit_with_Empowerment <- NPV_Empowerment_profit - 
+                                          NPV_no_empowerment_branch
+  
+  
   ####Return list####
+  
   return(list(NPV_no_empowerment_branch =  NPV_no_empowerment_branch,
-    NPV_Empowerment_profit = NPV_Empowerment_profit, 
-    NPV_decision_profit_with_empowerment = NPV_decision_profit_with_empowerment,
-    Cashflow_decision_empowerment =  Empowerment_profit
-              
+              NPV_Empowerment_profit = NPV_Empowerment_profit, 
+              NPV_decision_profit_with_Empowerment = NPV_decision_profit_with_Empowerment,
+              Cashflow_decision_empowerment =  Empowerment_profit
   )) 
 }
 
@@ -345,7 +378,8 @@ server <- function(input,output) {
                                                "var_slight",
                                                "discount_rate",
                                                "payout_months", "investment_months",
-                                               "safety_risk"),
+                                               "safety_risk",
+                                               "SQ_safety_risk"),
                                   lower = c(min(input$slider1),min(input$slider2),
                                             min(input$slider3),min(input$slider4),
                                             min(input$slider5),min(input$slider6),
@@ -354,7 +388,8 @@ server <- function(input,output) {
                                             min(input$slider11),min(input$slider12),
                                             min(input$slider13),min(input$slider14),
                                             min(input$slider15),min(input$slider16),
-                                            min(input$slider17),min(input$slider18)
+                                            min(input$slider17),min(input$slider18),
+                                            min(input$slider19)
                                   ),
                                   median = NA,
                                   upper = c(max(input$slider1),max(input$slider2),
@@ -365,7 +400,8 @@ server <- function(input,output) {
                                             max(input$slider11),max(input$slider12),
                                             max(input$slider13),max(input$slider14),
                                             max(input$slider15),max(input$slider16),
-                                            max(input$slider17),max(input$slider18)
+                                            max(input$slider17),max(input$slider18),
+                                            max(input$slider19)
                                   ),
                                   distribution = c("posnorm","posnorm",
                                                    "posnorm","posnorm",
@@ -376,7 +412,7 @@ server <- function(input,output) {
                                                    "posnorm",
                                                    "const","const",
                                                    "const","const",
-                                                   "const"),
+                                                   "const","const"),
                                   label = c("Education investment (Dollar/Month)",
                                             "Economy investment (Dollar/Month)",
                                             "Economy payout (Dollar/Month)",
@@ -394,7 +430,7 @@ server <- function(input,output) {
                                             "Discout rate",
                                             "Months of receiving money (Dollar/Month)",
                                             "Months of paying into empowerment efforts (Dollar/Month)",
-                                            "Risk Safety"),
+                                            "Risk Safety", "Status Quo Safety risk"),
                                   Description = c("Education investment",
                                                   "Economy investment",
                                                   "Economy payout",
@@ -412,7 +448,7 @@ server <- function(input,output) {
                                                   "Discout rate",
                                                   "Months of receiving money",
                                                   "Months of paying into empowerment efforts",
-                                                  "Risk Safety"))
+                                                  "Risk Safety", "Status Quo Safety risk"))
     
     input_estimates <- input_estimates %>% 
       mutate(variable = as.character(variable),
@@ -453,7 +489,7 @@ server <- function(input,output) {
   output$plot1 <- renderPlot({
     
 decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(), 
-                                vars = c("NPV_decision_profit_with_empowerment",
+                                vars = c("NPV_decision_profit_with_Empowerment",
                                           "NPV_no_empowerment_branch"),
                                           method = 'smooth_simple_overlay', 
                           colors = c("purple3", "pink2", "gray32", "rosybrown1",
@@ -465,7 +501,7 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
   output$plot2 <- renderPlot({
     
 decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(), 
-                                vars = c("NPV_decision_profit_with_empowerment"
+                                vars = c("NPV_decision_profit_with_Empowerment"
                                  ),
                                  method = 'boxplot', 
                                  base_size = 7)
@@ -475,12 +511,12 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
   output$plot3 <- renderPlot({
     
     Cashflow <- plot_cashflow(mcSimulation_object = chile_mc_simulation(),
-                              cashflow_var_name = "Cashflow_decision_empowerment",
-                              x_axis_name = "Month",
-                              y_axis_name = "Cashflow in Dollar",
-                              color_25_75 = "green4",
-                              color_5_95 = "green1",
-                              color_median = "red")
+                            cashflow_var_name = "Cashflow_decision_empowerment",
+                            x_axis_name = "Month",
+                            y_axis_name = "Cashflow in Dollar",
+                            color_25_75 = "green4",
+                            color_5_95 = "green1",
+                            color_median = "red")
     Cashflow
     
   })
@@ -489,7 +525,7 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
   output$plot4 <- renderPlot({
     
     pls_result_1 <- plsr.mcSimulation(object = chile_mc_simulation(),
-                            resultName = "NPV_decision_profit_with_empowerment",
+                            resultName = "NPV_decision_profit_with_Empowerment",
                             ncomp = 1)
     
     plot_pls(pls_result_1, threshold = 0.8, input_table = dataSource())
@@ -529,6 +565,8 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
   #EVPI was not by default included into the shiny app, since its calculation
   #takes very long.
   #The hashtags have to be eliminated within this source code to make it work.
+  #there are better ways to include it into the shiny app, 
+  #but due to time restrictions it was left out.
   
   #  })
 } 

@@ -104,41 +104,41 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "Controls", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     p("Within the model, a farm woman who chooses to change her status quo first must 
-                                      invest in some form of education or training. This investment is estimated here."),
+                                    invest in some form of education or training. This investment is estimated here."),
                                     tags$br(sliderInput("slider1", "Education investment (Dollar/Month):", 1, 1000, c(10,50),step=1)),
                                     p("Afterward, an investment in the form of a credit,
-                                      a (new) paid job, or additional income is estimated.
-                                      This investment includes every monthly expanse that leads to an economic payoff in the future, 
-                                      like transport or child care costs. 
-                                      Education about this investment possibility took place within the first step"),
+                                    a (new) paid job, or additional income is estimated.
+                                    This investment includes every monthly expanse that leads to an economic payoff in the future, 
+                                    like transport or child care costs. 
+                                    Education about this investment possibility took place within the first step"),
                                     tags$br(sliderInput("slider2", "Economy investment (Dollar/Month):", 1, 1000, c(1,20),step=1)),
                                     p("Here the range of the monetary gain from the prior investment is calculated."),
                                     tags$br(sliderInput("slider3", "Economy payout (Dollar/Month):", 1, 1000, c(50,200),step=1)),
                                     p("Here, the agricultural resource investment range per month is calculated
-                                      for the status quo option - a life living from farm resources without
-                                      empowerment intervention."),
+                                    for the status quo option - a life living from farm resources without
+                                    empowerment intervention."),
                                     tags$br(sliderInput("slider4", "Status Quo Resources investment (Dollar/Month):", 1, 1000, c(30,100),step=1)),
                                     p("Following is the monthly payout of the resource investment a farm woman can expect while 
-                                      not changing the status quo."),
+                                    not changing the status quo."),
                                     tags$br(sliderInput("slider5", "Status Quo Resources payout (Dollar/Month):", 1, 1000, c(20,90),step=1)),
                                     p("This could be chicken, seeds, processing material, technology, etc."),
                                     tags$br(sliderInput("slider6", "Empowerment Resources investment (Dollar/Month):", 1, 1000, c(30,100),step=1)),
                                     p("Following is the monthly payout of the resource investment a farm woman can expect while 
-                                      changing her situation. This could be monetary gains from eggs, processed food and other."),
+                                    changing her situation. This could be monetary gains from eggs, processed food and other."),
                                     tags$br(sliderInput("slider7", "Empowerment Resources payout (Dollar/Month):", 1, 1000, c(200,300),step=1)),
                                     p("Following are the monthly investments a farm woman could make on nutritious food and health care
                                     investments like contraceptives or savings for doctor's visits while in a status quo scenario."),
                                     tags$br(sliderInput("slider8", "Status Quo Workforce investment (Dollar/Month):", 1, 1000, c(50,100),step=1)),
                                     p("Investments in nutritious food and health care can lead to higher workforce ability. 
-                                      A farm woman's daily work hours are calculated and put in monetary values. 
-                                      Here the value ranges for the status quo pathway are calculated."),
+                                    A farm woman's daily work hours are calculated and put in monetary values. 
+                                    Here the value ranges for the status quo pathway are calculated."),
                                     tags$br(sliderInput("slider9", "Status Quo Workforce payout (Dollar/Month):", 1, 1000, c(30,100),step=1)),
                                     p("The monthly investments a farm woman could make on nutritious food and health care
                                     investments like contraception or savings for doctor's visits while being in an empowerment scenaro."),
                                     tags$br(sliderInput("slider10", "Empowerment Workforce investment (Dollar/Month):", 1, 1000, c(50,100),step=1)),
                                     p("Investments into nutritious food and health care can lead to higher workforce ability. 
-                                      A farm woman's daily work hours are calculated here and put in monetary values. 
-                                      Here the value ranges for the empowerment pathway are calculated."),
+                                    A farm woman's daily work hours are calculated here and put in monetary values. 
+                                    Here the value ranges for the empowerment pathway are calculated."),
                                     tags$br(sliderInput("slider11", "Empowerment Workforce payout (Dollar/Month):", 1, 1000, c(300,1000),step=1)),
                                     p("A husband might share some money with this wife, the farm woman, for health care or food investments.
                                     This money is calculated here for the status quo pathway."),
@@ -150,18 +150,23 @@ ui <- dashboardPage(skin =  "purple",
                                     to one number instead of a range for the application to work properly.", style = "color:purple;")),
                                     tags$br(tags$strong("Please wait a second for 
                                     the error warning to disappear after changing the following inputs.", style = "color:purple;")),
+                                  tags$br(),
                                   tags$br(p("The next value is used for time series that include a variation.")),
                                     tags$br(sliderInput("slider14", "Coefficient of variation:", 0, 1, c(1,1),step=0.1)),
                                     p("The discount rate can indicate the decision maker's willingness
                                     to invest in long-term outcomes."),
                                     tags$br(sliderInput("slider15", "Discout rate:", 1, 5, c(1,1),step=0.1)),
                                     p("The following two parameters calculate how long a farm woman has to invest
-                                       until she can receive the payback."),
+                                    until she can receive the payback."),
                                     tags$br(sliderInput("slider16", "Months of receiving money:", 1, 36, c(9,9),step=1)),
                                     tags$br(sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3,3),step=1)),
                                     p("Here the percentage risk of unsafe conditions ending the empowerment possibility 
-                                      and stopping the intervention is calculated."),
-                                    tags$br(sliderInput("slider18", "Risk Safety [%]:", 0.1, 1, c(0.5,0.5),step=0.1))
+                                    and stopping the intervention is calculated."),
+                                    tags$br(sliderInput("slider18", "Risk Safety [%]:", 0.01, 1, c(0.06,0.06),step=0.01)),
+                                    p("Here the percentage risk of unsafe conditions within the status quo pathway,
+                                    ending the pathway is calculated. A woman then looses complete control over farm income
+                                    and does not receive a workforce investment from her husband."),
+                                    tags$br(sliderInput("slider19", "Status Quo Risk Safety [%]:", 0.01, 1, c(0.04,0.04),step=0.01))
                                   )),
                                 
                                 fluidRow(
