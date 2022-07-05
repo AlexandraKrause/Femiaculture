@@ -5,10 +5,10 @@ account: femiaculture
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6461435
-bundleId: 6022350
+bundleId: 6072787
 url: https://femiaculture.shinyapps.io/femiaculture/
-when: 1655678296.55734
-lastSyncTime: 1655678296.55734
+when: 1657061857.76927
+lastSyncTime: 1657061857.76927
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: .RData|README.md
+ignoredFiles: .RData|CITATION.cff|README.md|tests/shinytest.R
