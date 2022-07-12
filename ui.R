@@ -105,46 +105,46 @@ ui <- dashboardPage(skin =  "purple",
                                     width = 12,
                                     p("Within the model, a farm woman who chooses to change her status quo first must 
                                     invest in some form of education or training. This investment is estimated here."),
-                                    tags$br(sliderInput("slider1", "Education investment (Dollar/Month):", 1, 1000, c(10,50),step=1)),
+                                    tags$br(sliderInput("slider1", "Education investment (Dollar/Month):", 1, 1000, c(1,3),step=1)),
                                     p("Afterward, an investment in the form of a credit,
                                     a (new) paid job, or additional income is estimated.
                                     This investment includes every monthly expanse that leads to an economic payoff in the future, 
                                     like transport or child care costs. 
                                     Education about this investment possibility took place within the first step"),
-                                    tags$br(sliderInput("slider2", "Economy investment (Dollar/Month):", 1, 1000, c(1,20),step=1)),
+                                    tags$br(sliderInput("slider2", "Economy investment (Dollar/Month):", 1, 1000, c(3,10),step=1)),
                                     p("Here the range of the monetary gain from the prior investment is calculated."),
-                                    tags$br(sliderInput("slider3", "Economy payout (Dollar/Month):", 1, 1000, c(50,200),step=1)),
+                                    tags$br(sliderInput("slider3", "Economy payout (Dollar/Month):", 1, 1000, c(30,90),step=1)),
                                     p("Here, the agricultural resource investment range per month is calculated
                                     for the status quo option - a life living from farm resources without
                                     empowerment intervention."),
-                                    tags$br(sliderInput("slider4", "Status Quo Resources investment (Dollar/Month):", 1, 1000, c(30,100),step=1)),
+                                    tags$br(sliderInput("slider4", "Status Quo Resources investment (Dollar/Month):", 1, 1000, c(1,10),step=1)),
                                     p("Following is the monthly payout of the resource investment a farm woman can expect while 
                                     not changing the status quo."),
-                                    tags$br(sliderInput("slider5", "Status Quo Resources payout (Dollar/Month):", 1, 1000, c(20,90),step=1)),
+                                    tags$br(sliderInput("slider5", "Status Quo Resources payout (Dollar/Month):", 1, 1000, c(1,20),step=1)),
                                     p("This could be chicken, seeds, processing material, technology, etc."),
-                                    tags$br(sliderInput("slider6", "Empowerment Resources investment (Dollar/Month):", 1, 1000, c(30,100),step=1)),
+                                    tags$br(sliderInput("slider6", "Empowerment Resources investment (Dollar/Month):", 1, 1000, c(10,20),step=1)),
                                     p("Following is the monthly payout of the resource investment a farm woman can expect while 
                                     changing her situation. This could be monetary gains from eggs, processed food and other."),
-                                    tags$br(sliderInput("slider7", "Empowerment Resources payout (Dollar/Month):", 1, 1000, c(200,300),step=1)),
+                                    tags$br(sliderInput("slider7", "Empowerment Resources payout (Dollar/Month):", 1, 1000, c(10,50),step=1)),
                                     p("Following are the monthly investments a farm woman could make on nutritious food and health care
                                     investments like contraceptives or savings for doctor's visits while in a status quo scenario."),
-                                    tags$br(sliderInput("slider8", "Status Quo Workforce investment (Dollar/Month):", 1, 1000, c(50,100),step=1)),
+                                    tags$br(sliderInput("slider8", "Status Quo Workforce investment (Dollar/Month):", 1, 1000, c(1,20),step=1)),
                                     p("Investments in nutritious food and health care can lead to higher workforce ability. 
                                     A farm woman's daily work hours are calculated and put in monetary values. 
                                     Here the value ranges for the status quo pathway are calculated."),
-                                    tags$br(sliderInput("slider9", "Status Quo Workforce payout (Dollar/Month):", 1, 1000, c(30,100),step=1)),
+                                    tags$br(sliderInput("slider9", "Status Quo Workforce payout (Dollar/Month):", 1, 1000, c(5,50),step=1)),
                                     p("The monthly investments a farm woman could make on nutritious food and health care
                                     investments like contraception or savings for doctor's visits while being in an empowerment scenaro."),
-                                    tags$br(sliderInput("slider10", "Empowerment Workforce investment (Dollar/Month):", 1, 1000, c(50,100),step=1)),
+                                    tags$br(sliderInput("slider10", "Empowerment Workforce investment (Dollar/Month):", 1, 1000, c(5,40),step=1)),
                                     p("Investments into nutritious food and health care can lead to higher workforce ability. 
                                     A farm woman's daily work hours are calculated here and put in monetary values. 
                                     Here the value ranges for the empowerment pathway are calculated."),
-                                    tags$br(sliderInput("slider11", "Empowerment Workforce payout (Dollar/Month):", 1, 1000, c(300,1000),step=1)),
+                                    tags$br(sliderInput("slider11", "Empowerment Workforce payout (Dollar/Month):", 1, 1000, c(80,100),step=1)),
                                     p("A husband might share some money with this wife, the farm woman, for health care or food investments.
                                     This money is calculated here for the status quo pathway."),
-                                    tags$br(sliderInput("slider12", "SQ Husband's Workforce investment (Dollar/Month):", 1, 1000, c(50,100),step=1)),
+                                    tags$br(sliderInput("slider12", "SQ Husband's Workforce investment (Dollar/Month):", 1, 1000, c(1,20),step=1)),
                                     p("The Husband's workforce investment for the empowerment pathway is calculated here."),
-                                    tags$br(sliderInput("slider13", "Husband's Workforce investment (Dollar/Month):", 1, 1000, c(10,50),step=1)),
+                                    tags$br(sliderInput("slider13", "Husband's Workforce investment (Dollar/Month):", 1, 1000, c(1,15),step=1)),
                                   ###
                                     tags$br(tags$strong("The following five inputs are constant. Please set the slider
                                     to one number instead of a range for the application to work properly.", style = "color:purple;")),
@@ -173,6 +173,14 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
                                     tableOutput("table1"))),
+                               #Checking the values
+                               # fluidRow(
+                               # box(
+                               #   title ="Min,1st Quan.,Median, Mean, 3rd Qu., Max of status quo", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
+                               #   tableOutput("table2")),
+                               # box(
+                               #   title ="Min,1st Qu.,Median, Mean, 3rd Qu., Max of decision", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
+                               #   tableOutput("table3"))),
                                 fluidRow(
                                   box(
                                     title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE,

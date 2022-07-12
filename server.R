@@ -165,12 +165,8 @@
 #### Start of the function ####
 
 decision_function <- function(x, varnames){
-  
+
   #Risk
-  # safety_payout <- chance_event(safety_risk, 1, 0, n = payout_months, 
-  #                               one_draw =FALSE)
-  # safety_inv <- chance_event(safety_risk, 1, 0, n = investment_months,
-  #                            one_draw =FALSE)
   safety <- chance_event((1-safety_risk), 1, 0,
                          n = (payout_months + investment_months))
   SQ_safety <- chance_event((1-SQ_safety_risk), 1, 0,
@@ -283,16 +279,11 @@ decision_function <- function(x, varnames){
                                                    n = payout_months))
   
   Husband_Empowerment_Workforce_investment <- 
-  Husband_Empowerment_Workforce_investment * safety
-  
+    Husband_Empowerment_Workforce_investment * safety  
+
   ### Computing the decision and status quo  pathways ###
   
   ##Status Quo pathway##
-  
-  #  PartA <- SQ_Workforce_payout + SQ_Resources_payout 
-  #  PartB <- SQ_Resources_investment + SQ_Workforce_investment 
-  #  + SQ_Husband_Workforce_investment
-  #  Profit_SQ <- (PartA -PartB)
   
   
   PartA <- SQ_Workforce_payout
@@ -312,9 +303,9 @@ decision_function <- function(x, varnames){
   ### Estimate the NPV from the model ###
   
   #Computing the Status Quo NPV (Net present value)#
-  
+
   NPV_no_empowerment_branch <- discount(Profit_SQ,
-                                        discount_rate = discount_rate, calculate_NPV = TRUE) 
+    discount_rate = discount_rate, calculate_NPV = TRUE)  
   
   ##Empowerment pathway##
   
@@ -330,14 +321,12 @@ decision_function <- function(x, varnames){
   
   Empowerment_profit <-  (PartA - PartB)
   
-  
   ### Estimate the NPV from the model ####
   
   #Computing the Empowerment NPV (Net present value)#
   
   NPV_Empowerment_profit <- discount(Empowerment_profit,
-                                     discount_rate = discount_rate,
-                                     calculate_NPV = TRUE)
+                           discount_rate = discount_rate, calculate_NPV = TRUE)
   NPV_decision_profit_with_Empowerment <- NPV_Empowerment_profit - 
                                           NPV_no_empowerment_branch
   
@@ -345,10 +334,12 @@ decision_function <- function(x, varnames){
   ####Return list####
   
   return(list(NPV_no_empowerment_branch =  NPV_no_empowerment_branch,
-              NPV_Empowerment_profit = NPV_Empowerment_profit, 
-              NPV_decision_profit_with_Empowerment = NPV_decision_profit_with_Empowerment,
-              Cashflow_decision_empowerment =  Empowerment_profit
+   NPV_Empowerment_profit = NPV_Empowerment_profit, 
+   NPV_decision_profit_with_Empowerment = NPV_decision_profit_with_Empowerment,
+   Cashflow_decision_empowerment =  Empowerment_profit
+              
   )) 
+  
 }
 
 #### Run the Monte Carlo simulation using the model function ####
@@ -362,7 +353,8 @@ server <- function(input,output) {
   dataSource <- reactive({
     
     input_estimates <- data.frame(variable = c("Education_investment",
-                                               "Economy_investment", "Economy_payout",
+                                               "Economy_investment",
+                                               "Economy_payout",
                                                "SQ_Resources_investment", 
                                                "SQ_Resources_payout",
                                                "Empowerment_Resources_investment", 
@@ -481,6 +473,7 @@ server <- function(input,output) {
     
   })
   
+  
   #Net present value
   
   
@@ -494,16 +487,29 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                                       "gray34", "gray35", "gray36", "gray37"),
                                       base_size = 13)
   })
+  
   #Boxplot 
   
   output$plot2 <- renderPlot({
     
 decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(), 
-                                vars = c("NPV_decision_profit_with_Empowerment"
-                                 ),
-                                 method = 'boxplot', 
-                                 base_size = 7)
+                                vars = c("NPV_decision_profit_with_Empowerment",
+                                         "NPV_no_empowerment_branch"
+                                        ),
+                                        method = 'boxplot', 
+                                        base_size = 13)
+    
   })
+#Checking the values  
+#  output$table2 <- renderTable({
+#  x2<-summary(chile_mc_simulation()$y$NPV_no_empowerment_branch)
+#  data.frame(unclass(x2),check.names = TRUE, stringsAsFactors = TRUE)
+#  })
+#  output$table3 <- renderTable({
+#    x1<-summary(chile_mc_simulation()$y$NPV_decision_profit_with_Empowerment)
+#    data.frame(unclass(x1),check.names = FALSE, stringsAsFactors = FALSE)
+#  })
+  
   #Cashflow
   
   output$plot3 <- renderPlot({
