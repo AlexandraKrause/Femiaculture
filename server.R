@@ -58,14 +58,14 @@
 #"dashboardboy" includes the actual tab content of the app: All written texts,
 #graphics and the Decision Analysis Model.
 #Within the "dashboardbody" there are tabitems, fluidrows and boxes.
-#Within "tabitems", tabName = "methodology" calls what was
+#Within "tabitems", "tabName = "Methodology"" calls what was
 #previously sorted within the  "dashboardsidebar". 
 #An example:
 # tabItem(tabName = "Map",
 #h3("Map"),
 #
 #Everything following
-#the call (graphs, text, etc.) is part of the tab "methodology"
+#the call (graphs, text, etc.) is part of the tab "Methodology"
 #until the next tab is called, for example, "Model."
 #The tabs are sorted within the "dashboardSidebar" part. The 
 #order afterward in the "dashboardBody" is not decisive.
