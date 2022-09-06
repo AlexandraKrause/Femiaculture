@@ -254,7 +254,7 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$strong("The Impact Pathway For Empowerment Based On An Economic Assessment."),
                                          tags$p(" To  conduct a model an impact pathway like the following is needed, comparing two options with each other."),
                                          img(src = "impact_pathway1.png",
-                                             width="90%"
+                                             width="70%"
                                              #"1000"
                                          )
                                          # insert image :) src stands for source, url is ok. 
@@ -348,7 +348,8 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     tags$strong("Model in Detail: Sticking To Status Quo"),
-                                    tags$br(p("While coding the model, I further developed this more detailed figure. 
+                                    tags$br(p("After coding the model, I further developed this more detailed figure.
+                                    This pathway is divided into investments (green) and payoffs (red).
                                     The Option of sticking to the status quo leads down a path of losses. Empowerment 
                                     can be compared to a ladder: Depending on the situation the woman is in, the effects of the lack of Empowerment
                                     can be worse or less. But the general disadvantages stay the same. Women are often not paid for
@@ -357,10 +358,7 @@ ui <- dashboardPage(skin =  "purple",
                                     In other cases, females have to give all or parts of their income, derived from their own agricultural resources, to their husbands.
                                     Women might be allowed to gather few incomes by selling small amounts of farm goods. 
                                     On the one hand, the economic value might be minimal
-                                    and on the other women might not be able to spend it on their own needs, but only on their families.
-                                    So, the first part,\"Resources\", is about gaining agricultural resources and benefitting from them monetarily.
-                                    But it can also include other resources that are investigated within the local project (see tthe Section of changing status quo
-                                    for further information. Find further information about these in my master thesis.")))),
+                                    and on the other women might not be able to spend it on their own needs, but only on their families. Find further information about these in my master thesis.")))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         
@@ -390,9 +388,9 @@ ui <- dashboardPage(skin =  "purple",
                                     Processing food might be an example for her own farm brach.
                                     This shows the importance of leaving the decision to the decision-maker and not only observing 
                                     the economically best outcome. The farm wife decides what she would like to do and what options would be doable for her in her own individual
-                                    situation. If the study is done with a group of women, shiny app with sliders like the ones you saw in the first tab (Decision analysis basics) 
+                                    situation. If the study is done with a group of women, a Shiny app with sliders like the ones you saw in the first tab (Decision analysis basics) 
                                     might be helpful for a single woman to adapt the model for her
-                                    individual situation.Find further information about these in my master thesis."))),
+                                    individual situation. Find further information about these in my master thesis."))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         #seventh tab content
