@@ -348,17 +348,24 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     tags$strong("Model in Detail: Sticking To Status Quo"),
-                                    tags$br(p("After coding the model, I further developed this more detailed figure.
-                                    This pathway is divided into investments (green) and payoffs (red).
-                                    The Option of sticking to the status quo leads down a path of losses. Empowerment 
-                                    can be compared to a ladder: Depending on the situation the woman is in, the effects of the lack of Empowerment
-                                    can be worse or less. But the general disadvantages stay the same. Women are often not paid for
-                                    their farm work as well as their domestic work. Even if they manage their own land, they still have to carry the burden
-                                    of domestic work and are often expected to neglect their own economic farm work for their husband's farm or household needs.
-                                    In other cases, females have to give all or parts of their income, derived from their own agricultural resources, to their husbands.
-                                    Women might be allowed to gather few incomes by selling small amounts of farm goods. 
-                                    On the one hand, the economic value might be minimal
-                                    and on the other women might not be able to spend it on their own needs, but only on their families. Find further information about these in my master thesis.")))),
+                                    tags$br(p("After coding the model, I further developed this more
+                                              detailed figure. This pathway is divided into investments
+                                              (green) and payoffs (red). The option of sticking to the status
+                                              quo leads down a path of losses. Empowerment can be compared to
+                                              a ladder: Depending on the situation the woman is in, the effects
+                                              of the lack of Empowerment can be worse or less. But the general
+                                              disadvantages stay the same. Women are often not paid for their
+                                              farm work as well as their domestic work. Even if they manage 
+                                              their own land, they still have to carry the burden of domestic
+                                              work and are often expected to neglect their own economic farm 
+                                              work for their husband's farm or household needs. In other cases,
+                                              females have to give all or parts of their income, derived from
+                                              their own agricultural resources, to their husbands. Women might
+                                              be allowed to gather a little income by selling small amounts
+                                              of farm goods. On the one hand, the economic value might be minimal,
+                                              and on the other, women might not be able to spend it on their own
+                                              needs but only on their families. Find further information about
+                                              these in my master thesis.")))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         
@@ -377,20 +384,16 @@ ui <- dashboardPage(skin =  "purple",
                                     width = 12,
                                     tags$strong("Model in Detail: Changing Status Quo"),
                                     p("Like a ladder, the situation might only be changed stepwise. Therefore,
-                                    the Empowerment pathway might contain several more or less economically beneficial options 
-                                    depending on what is possible for the woman in her situation. Depending on the actual decision,
-                                    some steps might be left out or varied.The \"Economy\" part of the model also includes economic gains like finding a paid job or employment off-farm. Asking the husband
-                                    to pay her for her work is also an option. Also, see our", tags$a(href="https://rpubs.com/Gendergroup/808624", "Gendergroup pension project"), 
-                                      "where we observed several pathways for german in-married farm wives to achieve money for several pension options. It shows vividly
-                                    that depending on the local context, many different options should be modeled, depending on inner-household and external social pressure.
-                                    We also included the case of high inner-household pressure as an option to choose the less monetarily valuable but peace-keeping option 
-                                    of still working on her husband's farm but either being paid for the same work or having her own farm branch, from which she can keep the money.
-                                    Processing food might be an example for her own farm brach.
-                                    This shows the importance of leaving the decision to the decision-maker and not only observing 
-                                    the economically best outcome. The farm wife decides what she would like to do and what options would be doable for her in her own individual
-                                    situation. If the study is done with a group of women, a Shiny app with sliders like the ones you saw in the first tab (Decision analysis basics) 
-                                    might be helpful for a single woman to adapt the model for her
-                                    individual situation. Find further information about these in my master thesis."))),
+                                    the Empowerment pathway might contain more or less economically beneficial options 
+                                    depending on what is possible for the woman in her situation.
+                                    The \"Economy\" part of the model could include economic
+                                    gains like finding a paid job or employment off-farm. For a woman, asking the husband
+                                    to pay her for her work is also an option. 
+                                    Also, see our", tags$a(href="https://rpubs.com/Gendergroup/808624", "Gendergroup pension project"), 
+                                    ",where we observed several pathways for german in-married farm wives to achieve money for several pension options.
+                                    It shows vividly
+                                    that depending on the local context and the decision-maker, different options should be modeled, depending on inner-household
+                                    and external social pressure. Find further information about the empowerment decision option in my master thesis."))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         #seventh tab content
@@ -407,7 +410,7 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     tags$code("The Social Environmnet"),
-                                    p("A problematic social environment in which complex behavior towards women is accepted or praised and victims are blamed,
+                                    p("A complex social environment in which complex behavior towards women is accepted or praised and victims are blamed,
                                     or strong backlash exists, can also strengthen problematic inner-household dynamics and masculinities. These can lead as well
                                     as the challenging behavior itself to safety issues. Safety issues have a negative effect on mental and physical health.
                                     The decision's riskiness is therefore called Safety risk and affects both status quo and empowerment pathways differently. 
