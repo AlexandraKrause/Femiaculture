@@ -19,7 +19,7 @@ Within this master thesis, I applied a literature research and the Decision Anal
 
 Here you find the website: https://femiaculture.shinyapps.io/femiaculture/
 
-Please note(!)
+Please note (!):
 For the first sliders, you need to insert ranges (for example, from x to y) and no constant values.
 The last five inputs are constant. Please set the slider to one number instead of a range for the application to work properly here.
 
