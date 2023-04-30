@@ -103,9 +103,10 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title = "Controls", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
+                                    tags$strong("Please set a rage and no constant values for the following inputs. Else, an error will occur", style = "color:purple;"),
                                     p("Within the model, a farm woman who chooses to change her status quo first must 
                                     invest in some form of education or training. This investment is estimated here."),
-                                    tags$br(sliderInput("slider1", "Education investment (Dollar/Month):", 1, 1000, c(1,3),step=1, dragRange = FALSE)),
+                                    tags$br(sliderInput(inputId = "slider1", label = "Education investment (Dollar/Month):", min = 1, max = 1000, value = c(1,3), step=1, dragRange = FALSE)),
                                     p("Afterward, an investment in the form of a credit,
                                     a (new) paid job, or additional income is estimated.
                                     This investment includes every monthly expanse that leads to an economic payoff in the future, 
@@ -147,7 +148,7 @@ ui <- dashboardPage(skin =  "purple",
                                     tags$br(sliderInput("slider13", "Husband's Workforce investment (Dollar/Month):", 1, 1000, c(1,15),step=1)),
                                   ###
                                     tags$br(tags$strong("The following five inputs are constant. Please set the slider
-                                    to one number instead of a range for the application to work properly.", style = "color:purple;")),
+                                    to one number instead of a range.", style = "color:purple;")),
                                     tags$br(tags$strong("Please wait a second for 
                                     the error warning to disappear after changing the following inputs.", style = "color:purple;")),
                                   tags$br(),

@@ -522,7 +522,7 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                             color_5_95 = "green1",
                             color_median = "red")
     Cashflow
-    
+
   })
   #PLS (Partial least square regression)
   
