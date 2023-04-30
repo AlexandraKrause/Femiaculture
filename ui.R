@@ -147,10 +147,8 @@ ui <- dashboardPage(skin =  "purple",
                                     p("The Husband's workforce investment for the empowerment pathway is calculated here."),
                                     tags$br(sliderInput("slider13", "Husband's Workforce investment (Dollar/Month):", 1, 1000, c(1,15),step=1)),
                                   ###
-                                    tags$br(tags$strong("The following five inputs are constant. Please set the slider
+                                    tags$br(tags$strong("The following five inputs are constant. Here you can set the slider
                                     to one number instead of a range.", style = "color:purple;")),
-                                    tags$br(tags$strong("Please wait a second for 
-                                    the error warning to disappear after changing the following inputs.", style = "color:purple;")),
                                   tags$br(),
                                   tags$br(p("The next value is used for time series that include a variation.")),
                                     tags$br(sliderInput("slider14", "Coefficient of variation:", 0, 1, c(1),step=0.1)),
