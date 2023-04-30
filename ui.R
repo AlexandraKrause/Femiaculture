@@ -105,7 +105,7 @@ ui <- dashboardPage(skin =  "purple",
                                     width = 12,
                                     p("Within the model, a farm woman who chooses to change her status quo first must 
                                     invest in some form of education or training. This investment is estimated here."),
-                                    tags$br(sliderInput("slider1", "Education investment (Dollar/Month):", 1, 1000, c(1,3),step=1)),
+                                    tags$br(sliderInput("slider1", "Education investment (Dollar/Month):", 1, 1000, c(1,3),step=1, dragRange = FALSE)),
                                     p("Afterward, an investment in the form of a credit,
                                     a (new) paid job, or additional income is estimated.
                                     This investment includes every monthly expanse that leads to an economic payoff in the future, 
@@ -152,21 +152,21 @@ ui <- dashboardPage(skin =  "purple",
                                     the error warning to disappear after changing the following inputs.", style = "color:purple;")),
                                   tags$br(),
                                   tags$br(p("The next value is used for time series that include a variation.")),
-                                    tags$br(sliderInput("slider14", "Coefficient of variation:", 0, 1, c(1,1),step=0.1)),
+                                    tags$br(sliderInput("slider14", "Coefficient of variation:", 0, 1, c(1),step=0.1)),
                                     p("The discount rate can indicate the decision maker's willingness
                                     to invest in long-term outcomes."),
-                                    tags$br(sliderInput("slider15", "Discout rate:", 1, 5, c(1,1),step=0.1)),
+                                    tags$br(sliderInput("slider15", "Discout rate:", 1, 5, c(1),step=0.1)),
                                     p("The following two parameters calculate how long a farm woman has to invest
                                     until she can receive the payback."),
-                                    tags$br(sliderInput("slider16", "Months of receiving money:", 1, 36, c(9,9),step=1)),
-                                    tags$br(sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3,3),step=1)),
+                                    tags$br(sliderInput("slider16", "Months of receiving money:", 1, 36, c(9),step=1)),
+                                    tags$br(sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3),step=1)),
                                     p("Here the percentage risk of unsafe conditions ending the empowerment possibility 
                                     and stopping the intervention is calculated."),
-                                    tags$br(sliderInput("slider18", "Risk Safety [%]:", 0.01, 1, c(0.06,0.06),step=0.01)),
+                                    tags$br(sliderInput("slider18", "Risk Safety [%]:", 0.01, 1, c(0.06),step=0.01)),
                                     p("Here the percentage risk of unsafe conditions within the status quo pathway,
                                     ending the pathway is calculated. A woman then looses complete control over farm income
                                     and does not receive a workforce investment from her husband."),
-                                    tags$br(sliderInput("slider19", "Status Quo Risk Safety [%]:", 0.01, 1, c(0.04,0.04),step=0.01))
+                                    tags$br(sliderInput("slider19", "Status Quo Risk Safety [%]:", 0.01, 1, c(0.04),step=0.01))
                                   )),
                                 
                                 fluidRow(
