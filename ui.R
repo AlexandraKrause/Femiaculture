@@ -102,7 +102,7 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title = "Controls", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    tags$br(tags$strong("The following values must be rages and no constant values.", style = "color:purple;")),
+                                    tags$br(tags$strong("The following values must be ranges and no constant values.", style = "color:purple;")),
                                     tags$br(),
                                     p("Within the model, a farm woman who chooses to change her status quo first must 
                                     invest in some form of education or training. This investment is estimated here."),
