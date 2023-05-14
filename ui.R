@@ -56,7 +56,7 @@ ui <- dashboardPage(skin =  "purple",
                                     width = 6, 
                                     tags$strong("Welcome To Femiaculture by Alexandra Krause", style = "font-size:20px;"),
                                     tags$br(tags$i(p("If the app looks distorted, please try another browser. Please do not use Windows Edge."))), 
-                                    p("I build this website during my master thesis focusing on factors influencing rural
+                                    p("I build this website focusing on factors influencing rural
                                     farm-women's empowerment. Later, I applied the Decision Analysis methodology.
                                     To understand the underlying empowerment system, I conducted
                                     a literature research, connected to researchers and visited conferences.
@@ -72,7 +72,7 @@ ui <- dashboardPage(skin =  "purple",
                                       By using Shiny apps like these, online information systems can be developed also for them.
                                       Therefore, researchers need to adapt the model to local situations by using the sliders
                                       and sometimes change the website's code to 
-                                      rural women's user needs. Find more information in my master thesis."),
+                                      rural women's user needs."),
                                     p("Please try it out yourself: You see the initial graph left on the page - if you changed the values on the slider, 
                                       you see the chart changing (if not, please reload the page).
                                       So, what should a farm women decide to do? 
@@ -87,8 +87,7 @@ ui <- dashboardPage(skin =  "purple",
                                       coincidences are also calculated, the visual might look a bit different each time you use the application.
                                       Beneath the sliders and the text, a table also shows the current values."),
                                     p("To find out more, please click on \"The Project\" and read the following texts on this website.
-                                      Down on this page further calculations like a cashflow can be done. 
-                                      Find further information about these in my master thesis."),
+                                      Down on this page further calculations like a cashflow can be done."),
                                     div(
                                       # use HTML by wrapping it with this function. 
                                       # Use a bootstrap or Font Awesome icons 
@@ -103,7 +102,8 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title = "Controls", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
-                                    tags$strong("Please set a rage and no constant values for the following inputs. Else, an error will occur", style = "color:purple;"),
+                                    tags$br(tags$strong("The following values must be rages and no constant values.", style = "color:purple;")),
+                                    tags$br(),
                                     p("Within the model, a farm woman who chooses to change her status quo first must 
                                     invest in some form of education or training. This investment is estimated here."),
                                     tags$br(sliderInput(inputId = "slider1", label = "Education investment (Dollar/Month):", min = 1, max = 1000, value = c(1,3), step=1, dragRange = FALSE)),
@@ -236,8 +236,7 @@ ui <- dashboardPage(skin =  "purple",
                                     Together with values from literature research, very good estimates 
                                     can be found. And luckily, the results are readily available for all decision-makers, workshop participants,
                                     and stakeholders as websites like this or mobile apps make them easily accessible.
-                                    Please consider taking part in the making of a model and visit the other tabs for more information.
-                                    Further information regarding the methodology can be found within my master thesis."),
+                                    Please consider taking part in the making of a model and visit the other tabs for more information."),
                                     p("Luedeling, E., & Shepherd, K. (2016). Decision-Focused Agricultural Research. Solutions, 7(5), 46-54.")
                                   )),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
@@ -265,7 +264,7 @@ ui <- dashboardPage(skin =  "purple",
                                     title = "", status = "primary",solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
                                     tags$code("General Overview"),
-                                    p("During my thesis, I researched factors influencing rural farm women's empowerment in agricultural development.
+                                    p("I researched factors influencing rural farm women's empowerment in agricultural development.
                                   I did a literature research and a decision analysis to assess the unequal
                                   resource distribution between male and female farmers and to evaluate how gender can be captured in modeling efforts.
                                   Women contribute not only to farm work, they are also often the primary providers of care for children and elderly family members,
@@ -314,7 +313,7 @@ ui <- dashboardPage(skin =  "purple",
                                     Many examples for local cases are shown within the extended Decision Analysis 
                                     impact pathway you can find through the \"Map\" tab on the left.
                                     The different parts of ecological and economic resource allocation visible through the \"Resource\" tab can be 
-                                    useful within the Resources part of the Impact pathway. For further information, please read my master thesis."),
+                                    useful within the Resources part of the Impact pathway."),
                                     
                                     tags$br(tags$br(p("Farnworth, C. R., Baudron, F., Andersson, J. A., Misiko, M., Badstue, L., & Stirling, C. M. (2016).
                                     Gender and conservation agriculture in East and Southern Africa: towards a research agenda. 
@@ -363,8 +362,7 @@ ui <- dashboardPage(skin =  "purple",
                                               be allowed to gather a little income by selling small amounts
                                               of farm goods. On the one hand, the economic value might be minimal,
                                               and on the other, women might not be able to spend it on their own
-                                              needs but only on their families. Find further information about
-                                              these in my master thesis.")))),
+                                              needs but only on their families.")))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         
@@ -392,7 +390,7 @@ ui <- dashboardPage(skin =  "purple",
                                     ",where we observed several pathways for german in-married farm wives to achieve money for several pension options.
                                     It shows vividly
                                     that depending on the local context and the decision-maker, different options should be modeled, depending on inner-household
-                                    and external social pressure. Find further information about the empowerment decision option in my master thesis."))),
+                                    and external social pressure."))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         #seventh tab content
@@ -412,8 +410,7 @@ ui <- dashboardPage(skin =  "purple",
                                     p("A complex social environment in which complex behavior towards women is accepted or praised and victims are blamed,
                                     or strong backlash exists, can also strengthen problematic inner-household dynamics and masculinities. These can lead as well
                                     as the challenging behavior itself to safety issues. Safety issues have a negative effect on mental and physical health.
-                                    The decision's riskiness is therefore called Safety risk and affects both status quo and empowerment pathways differently. 
-                                      Find further information about these in my master thesis."))),
+                                    The decision's riskiness is therefore called Safety risk and affects both status quo and empowerment pathways differently."))),
                                 tags$a(href="http://inresgb-lehre.iaas.uni-bonn.de/impressum/", "Impressum", style = "font-size:15px;",style = "color: black;")
                         ),
                         # eight tab content

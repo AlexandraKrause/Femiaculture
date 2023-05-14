@@ -348,7 +348,100 @@ decision_function <- function(x, varnames){
 #a user should be able to change. Above this function, all Decision Analysis
 #code parts that should not be changed are inserted.
 
-server <- function(input,output) {
+server <- function(input,output, session) {
+  
+  
+  observeEvent(input$slider1,{
+    if(min(input$slider1) == max(input$slider1)){
+      updateSliderInput(session, "slider1", min = 1, max = 1000,
+                        value = c(min(input$slider1)-1, max(input$slider1)))
+    }
+  })
+  
+  observeEvent(input$slider2,{
+    if(min(input$slider2) == max(input$slider2)){
+      updateSliderInput(session, "slider2", min = 1, max = 1000,
+                        value = c(min(input$slider2)-1, max(input$slider2)))
+    }
+  })
+  
+  observeEvent(input$slider3,{
+    if(min(input$slider3) == max(input$slider3)){
+      updateSliderInput(session, "slider3", min = 1, max = 1000,
+                        value = c(min(input$slider3)-1, max(input$slider3)))
+    }
+  })
+  
+  observeEvent(input$slider4,{
+    if(min(input$slider4) == max(input$slider4)){
+      updateSliderInput(session, "slider4", min = 1, max = 1000,
+                        value = c(min(input$slider4)-1, max(input$slider4)))
+    }
+  })
+  
+  observeEvent(input$slider5,{
+    if(min(input$slider5) == max(input$slider5)){
+      updateSliderInput(session, "slider5", min = 1, max = 1000,
+                        value = c(min(input$slider5)-1, max(input$slider5)))
+    }
+  })
+  
+  observeEvent(input$slider6,{
+    if(min(input$slider6) == max(input$slider6)){
+      updateSliderInput(session, "slider6", min = 1, max = 1000,
+                        value = c(min(input$slider6)-1, max(input$slider6)))
+    }
+  })
+  
+  observeEvent(input$slider7,{
+    if(min(input$slider7) == max(input$slider7)){
+      updateSliderInput(session, "slider7", min = 1, max = 1000,
+                        value = c(min(input$slider7)-1, max(input$slider7)))
+    }
+  })
+  
+  observeEvent(input$slider8,{
+    if(min(input$slider8) == max(input$slider8)){
+      updateSliderInput(session, "slider8", min = 1, max = 1000,
+                        value = c(min(input$slider8)-1, max(input$slider8)))
+    }
+  })
+  
+  observeEvent(input$slider9,{
+    if(min(input$slider9) == max(input$slider9)){
+      updateSliderInput(session, "slider9", min = 1, max = 1000,
+                        value = c(min(input$slider9)-1, max(input$slider9)))
+    }
+  })
+  
+  observeEvent(input$slider10,{
+    if(min(input$slider10) == max(input$slider10)){
+      updateSliderInput(session, "slider10", min = 1, max = 1000,
+                        value = c(min(input$slider10)-1, max(input$slider10)))
+    }
+  })
+  
+  observeEvent(input$slider11,{
+    if(min(input$slider11) == max(input$slider11)){
+      updateSliderInput(session, "slider11", min = 1, max = 1000,
+                        value = c(min(input$slider11)-1, max(input$slider11)))
+    }
+  })
+  
+  observeEvent(input$slider12,{
+    if(min(input$slider12) == max(input$slider12)){
+      updateSliderInput(session, "slider12", min = 1, max = 1000,
+                        value = c(min(input$slider12)-1, max(input$slider12)))
+    }
+  })
+  
+  observeEvent(input$slider13,{
+    if(min(input$slider13) == max(input$slider13)){
+      updateSliderInput(session, "slider13", min = 1, max = 1000,
+                        value = c(min(input$slider13)-1, max(input$slider13)))
+    }
+  })
+  
   
   dataSource <- reactive({
     
@@ -487,6 +580,8 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                                       "gray34", "gray35", "gray36", "gray37"),
                                       base_size = 13)
   })
+
+
   
   #Boxplot 
   
