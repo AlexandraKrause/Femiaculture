@@ -548,10 +548,10 @@ server <- function(input,output, session) {
     
   })
   # Table showing the values, updating itself when the user changes them.
+
   output$table1 <- renderTable({
-    dataSource()
-  })
-  
+    dataSource()}
+  )
   
   chile_mc_simulation <- reactive({
     
@@ -572,13 +572,14 @@ server <- function(input,output, session) {
   
   output$plot1 <- renderPlot({
     
-decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(), 
+ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(), 
                                 vars = c("NPV_decision_profit_with_Empowerment",
                                           "NPV_no_empowerment_branch"),
                                           method = 'smooth_simple_overlay', 
                           colors = c("purple3", "pink2", "gray32", "rosybrown1",
                                       "gray34", "gray35", "gray36", "gray37"),
-                                      base_size = 13)
+                                      base_size = 14)
+    
   })
 
 
@@ -592,7 +593,7 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                                          "NPV_no_empowerment_branch"
                                         ),
                                         method = 'boxplot', 
-                                        base_size = 13)
+                                        base_size = 14)
     
   })
 #Checking the values  
@@ -615,7 +616,8 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                             y_axis_name = "Cashflow in Dollar",
                             color_25_75 = "green4",
                             color_5_95 = "green1",
-                            color_median = "red")
+                            color_median = "red",
+                            base_size = 15)
     Cashflow
 
   })
@@ -627,7 +629,7 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                             resultName = "NPV_decision_profit_with_Empowerment",
                             ncomp = 1)
     
-    plot_pls(pls_result_1, threshold = 0.8, input_table = dataSource())
+    plot_pls(pls_result_1, threshold = 0.8, input_table = dataSource(), base_size = 14)
     
   })
   

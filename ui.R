@@ -9,7 +9,6 @@
 #install.packages("dplyr")
 #install.packages("rsconnect")
 
-
 library(shiny)
 library(shinydashboard)
 library(readr)
@@ -53,9 +52,8 @@ ui <- dashboardPage(skin =  "purple",
                                   ),
                                   box(
                                     title = "Femiaculture", status = "primary",solidHeader = TRUE, collapside = TRUE,
-                                    width = 6, 
+                                    width = 5, 
                                     tags$strong("Welcome To Femiaculture by Alexandra Krause", style = "font-size:20px;"),
-                                    tags$br(tags$i(p("If the app looks distorted, please try another browser. Please do not use Windows Edge."))), 
                                     p("I build this website focusing on factors influencing rural
                                     farm-women's empowerment. Later, I applied the Decision Analysis methodology.
                                     To understand the underlying empowerment system, I conducted
@@ -182,14 +180,16 @@ ui <- dashboardPage(skin =  "purple",
                                #   tableOutput("table3"))),
                                 fluidRow(
                                   box(
-                                    title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot2", width="100%")), 
+                                    title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE, width = 6,
+                                    plotOutput("plot2")), 
                                   box(
-                                    title ="Cashflow", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot3", width="100%")),
+                                    title ="Cashflow", status = "primary", solidHeader = TRUE, collapside = TRUE, width = 6,
+                                    plotOutput("plot3"))),
+                                  fluidRow(
                                   box(
                                     title ="PLS", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot4", width="100%")),
+                                    plotOutput("plot4"),width= 8,
+                                    p("Value of information analysis (VIA) or (VoI): Here, you can find the VIP, Variable importance of Projection.") ),
                                   #box(
                                   #  title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                   #  plotOutput("plot5")),
