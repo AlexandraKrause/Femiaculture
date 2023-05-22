@@ -55,7 +55,7 @@ ui <- dashboardPage(skin =  "purple",
                                     width = 5, 
                                     tags$strong("Welcome To Femiaculture by Alexandra Krause", style = "font-size:20px;"),
                                     tags$br(tags$a(href="https://femiaculture.shinyapps.io/FemiacultureMobile/",
-                                           "Find the Mobile phone Version here: https://femiaculture.shinyapps.io/FemiacultureMobile/",style = "color: purple;")),
+                                           "Find the mobile phone version here: https://femiaculture.shinyapps.io/FemiacultureMobile/",style = "color: purple;")),
                                     p("I build this website focusing on factors influencing rural
                                     farm-women's empowerment. Later, I applied the Decision Analysis methodology.
                                     To understand the underlying empowerment system, I conducted
