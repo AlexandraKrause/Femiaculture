@@ -5,10 +5,10 @@ account: femiaculture
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6461435
-bundleId: 7216336
+bundleId: 7247118
 url: https://femiaculture.shinyapps.io/femiaculture/
-when: 1684073438.44947
-lastSyncTime: 1684073438.44951
+when: 1684745964.82915
+lastSyncTime: 1684745964.82917
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: CITATION.cff|README.md

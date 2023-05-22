@@ -170,7 +170,7 @@ ui <- dashboardPage(skin =  "purple",
                                 
                                 fluidRow(
                                   box(
-                                    title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
+                                    title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 14, 
                                     tableOutput("table1"))),
                                #Checking the values
                                # fluidRow(
@@ -189,7 +189,7 @@ ui <- dashboardPage(skin =  "purple",
                                     plotOutput("plot3", width="100%")),
                                   box(
                                     title ="PLS", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot4", width="90%")),
+                                    plotOutput("plot4", width="100%")),
                                   #box(
                                   #  title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                   #  plotOutput("plot5")),
