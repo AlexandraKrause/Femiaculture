@@ -578,7 +578,7 @@ server <- function(input,output, session) {
                                           method = 'smooth_simple_overlay', 
                           colors = c("purple3", "pink2", "gray32", "rosybrown1",
                                       "gray34", "gray35", "gray36", "gray37"),
-                                      base_size = 14)
+                                      base_size = 16)
     
   })
 
@@ -593,7 +593,7 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                                          "NPV_no_empowerment_branch"
                                         ),
                                         method = 'boxplot', 
-                                        base_size = 14)
+                                        base_size = 16)
     
   })
 #Checking the values  
@@ -617,7 +617,7 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                             color_25_75 = "green4",
                             color_5_95 = "green1",
                             color_median = "red",
-                            base_size = 15)
+                            base_size = 16)
     Cashflow
 
   })
@@ -629,7 +629,7 @@ decisionSupport::plot_distributions(mcSimulation_object = chile_mc_simulation(),
                             resultName = "NPV_decision_profit_with_Empowerment",
                             ncomp = 1)
     
-    plot_pls(pls_result_1, threshold = 0.8, input_table = dataSource(), base_size = 14)
+    plot_pls(pls_result_1, threshold = 0.8, input_table = dataSource(), base_size = 16)
     
   })
   

@@ -54,10 +54,12 @@ ui <- dashboardPage(skin =  "purple",
                                   ),
                                   box(
                                     title = "Femiaculture", status = "primary",solidHeader = TRUE, collapside = TRUE,
-                                    width = 6, 
+                                    width = 5, 
                                     tags$strong("Welcome To Femiaculture by Alexandra Krause", style = "font-size:20px;"),
-                                    tags$br(tags$i(p("If the app looks distorted, please try another browser. Please do not use Windows Edge."))), 
-                                    p("I build this website during my master thesis focusing on factors influencing rural
+                                    p(),
+                                    p("For the mobile phone version, please click here:",
+                                      tags$a(href="https://femiaculture.shinyapps.io/FemiacultureMobile/", "https://femiaculture.shinyapps.io/FemiacultureMobile/ .", style = "color: purple;")),
+                                    p("I build this website focusing on factors influencing rural
                                     farm-women's empowerment. Later, I applied the Decision Analysis methodology.
                                     To understand the underlying empowerment system, I conducted
                                     a literature research, connected to researchers and visited conferences.
@@ -65,15 +67,14 @@ ui <- dashboardPage(skin =  "purple",
                                     I conducted (see the  \"Methodology\"-section)
                                     a generalized statistical model, suggesting it as a 
                                     measurement technique of the researched factors. See",
-                                    tags$a(href="https://github.com/AlexandraKrause/DA-Code_Femiaculture", "https://github.com/AlexandraKrause/DA-Code_Femiaculture"),
-                                    "for further information."),
+                                      tags$a(href="https://github.com/AlexandraKrause/DA-Code_Femiaculture", "https://github.com/AlexandraKrause/DA-Code_Femiaculture"),
+                                      "for further information."),
                                     p("
                                       So, by using the sliders in the upper part of this page, researchers can use the model for their own case studies.
                                       Decision Analysis also bears the possibility for actual change in the form of information for farm women.
                                       By using Shiny apps like these, online information systems can be developed also for them.
-                                      Therefore, researchers need to adapt the model to local situations by using the sliders. Researchers can also decide to
-                                      change the website's code to 
-                                      rural women's user needs and provide the app to them. Find more information in my master thesis."),
+                                      Researchers can also decide to change the website's code to rural women's user needs and provide the app to them. 
+                                      "),
                                     p("Please try it out yourself: You see the initial graph left on the page - if you changed the values on the slider, 
                                       you see the chart slowly changing.
                                       So, what should a farm women decide to do? 
@@ -88,8 +89,8 @@ ui <- dashboardPage(skin =  "purple",
                                       coincidences are also calculated, the visual might look a bit different each time you use the application.
                                       Beneath the sliders and the text, a table also shows the current values."),
                                     p("To find out more, please click on \"The Project\" and read the following texts on this website.
-                                      Down on this page further calculations like a cashflow can be done. 
-                                      Find further information about these in my master thesis."),
+                                      Down on this page further calculations like a cashflow can be done.
+                                      Find further information about these in the calculations-section."),
                                     div(
                                       # use HTML by wrapping it with this function. 
                                       # Use a bootstrap or Font Awesome icons 
@@ -104,9 +105,11 @@ ui <- dashboardPage(skin =  "purple",
                                   box(
                                     title = "Controls", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                     width = 12,
+                                    tags$br(tags$strong("The following values must be ranges and no constant values.", style = "color:purple;")),
+                                    tags$br(),
                                     p("Within the model, a farm woman who chooses to change her status quo first must 
                                     invest in some form of education or training. This investment is estimated here."),
-                                    tags$br(sliderInput("slider1", "Education investment (Dollar/Month):", 1, 1000, c(1,3),step=1)),
+                                    tags$br(sliderInput(inputId = "slider1", label = "Education investment (Dollar/Month):", min = 1, max = 1000, value = c(1,3), step=1, dragRange = FALSE)),
                                     p("Afterward, an investment in the form of a credit,
                                     a (new) paid job, or additional income is estimated.
                                     This investment includes every monthly expanse that leads to an economic payoff in the future, 
@@ -146,52 +149,56 @@ ui <- dashboardPage(skin =  "purple",
                                     tags$br(sliderInput("slider12", "SQ Husband's Workforce investment (Dollar/Month):", 1, 1000, c(1,20),step=1)),
                                     p("The Husband's workforce investment for the empowerment pathway is calculated here."),
                                     tags$br(sliderInput("slider13", "Husband's Workforce investment (Dollar/Month):", 1, 1000, c(1,15),step=1)),
-                                  ###
-                                    tags$br(tags$strong("The following five inputs are constant. Please set the slider
-                                    to one number instead of a range for the application to work properly.", style = "color:purple;")),
-                                    tags$br(tags$strong("Please wait a second for 
-                                    the error warning to disappear after changing the following inputs.", style = "color:purple;")),
-                                  tags$br(),
-                                  tags$br(p("The next value is used for time series that include a variation.")),
-                                    tags$br(sliderInput("slider14", "Coefficient of variation:", 0, 1, c(1,1),step=0.1)),
+                                    ###
+                                    tags$br(tags$strong("The following five inputs are constant. Here you can set the slider
+                                    to one number instead of a range.", style = "color:purple;")),
+                                    tags$br(),
+                                    tags$br(p("The next value is used for time series that include a variation.")),
+                                    tags$br(sliderInput("slider14", "Coefficient of variation:", 0, 1, c(1),step=0.1)),
                                     p("The discount rate can indicate the decision maker's willingness
                                     to invest in long-term outcomes."),
-                                    tags$br(sliderInput("slider15", "Discout rate:", 1, 5, c(1,1),step=0.1)),
+                                    tags$br(sliderInput("slider15", "Discout rate:", 1, 5, c(1),step=0.1)),
                                     p("The following two parameters calculate how long a farm woman has to invest
                                     until she can receive the payback."),
-                                    tags$br(sliderInput("slider16", "Months of receiving money:", 1, 36, c(9,9),step=1)),
-                                    tags$br(sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3,3),step=1)),
+                                    tags$br(sliderInput("slider16", "Months of receiving money:", 1, 36, c(9),step=1)),
+                                    tags$br(sliderInput("slider17", "Months of paying into empowerment efforts:", 1, 36, c(3),step=1)),
                                     p("Here the percentage risk of unsafe conditions ending the empowerment possibility 
                                     and stopping the intervention is calculated."),
-                                    tags$br(sliderInput("slider18", "Risk Safety [%]:", 0.01, 1, c(0.06,0.06),step=0.01)),
+                                    tags$br(sliderInput("slider18", "Risk Safety [%]:", 0.01, 1, c(0.06),step=0.01)),
                                     p("Here the percentage risk of unsafe conditions within the status quo pathway,
                                     ending the pathway is calculated. A woman then looses complete control over farm income
                                     and does not receive a workforce investment from her husband."),
-                                    tags$br(sliderInput("slider19", "Status Quo Risk Safety [%]:", 0.01, 1, c(0.04,0.04),step=0.01))
+                                    tags$br(sliderInput("slider19", "Status Quo Risk Safety [%]:", 0.01, 1, c(0.04),step=0.01))
                                   )),
+                                
+                                # fluidRow(
+                                #   box(
+                                #     title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 14, 
+                                #    tableOutput("table1"))),
+                                #Checking the values
+                                # fluidRow(
+                                # box(
+                                #   title ="Min,1st Quan.,Median, Mean, 3rd Qu., Max of status quo", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
+                                #   tableOutput("table2")),
+                                # box(
+                                #   title ="Min,1st Qu.,Median, Mean, 3rd Qu., Max of decision", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
+                                #   tableOutput("table3"))),
                                 
                                 fluidRow(
                                   box(
-                                    title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
-                                    tableOutput("table1"))),
-                               #Checking the values
-                               # fluidRow(
-                               # box(
-                               #   title ="Min,1st Quan.,Median, Mean, 3rd Qu., Max of status quo", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
-                               #   tableOutput("table2")),
-                               # box(
-                               #   title ="Min,1st Qu.,Median, Mean, 3rd Qu., Max of decision", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 12,
-                               #   tableOutput("table3"))),
+                                    title ="Self Adjusting Table", status = "primary", background = "navy", solidHeader = TRUE, collapside = TRUE, width = 14, 
+                                    tableOutput("table1")),
+                                  box(
+                                    title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE, width = 6,
+                                    plotOutput("plot2")), 
+                                  box(
+                                    title ="Cashflow", status = "primary", solidHeader = TRUE, collapside = TRUE, width = 6,
+                                    plotOutput("plot3"))),
                                 fluidRow(
                                   box(
-                                    title ="Boxplot", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot2", width="100%")), 
-                                  box(
-                                    title ="Cashflow", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot3", width="100%")),
-                                  box(
                                     title ="PLS", status = "primary", solidHeader = TRUE, collapside = TRUE,
-                                    plotOutput("plot4", width="90%")),
+                                    plotOutput("plot4"),width= 8,
+                                    p("Value of information analysis (VIA) or (VoI): Here, you can find the VIP, Variable importance of Projection.") ),
                                   #box(
                                   #  title ="EVPI", status = "primary", solidHeader = TRUE, collapside = TRUE,
                                   #  plotOutput("plot5")),
@@ -432,9 +439,9 @@ ui <- dashboardPage(skin =  "purple",
                                          tags$p("The pathway is the result of literature analysis.
                                                  Minuses and pluses show a positive or negative impact of a factor."),
                                                  tags$p("The numbers stand for sources. 
-                                                 Find the excel literature sources table that connects the source numbers to further source information here:", 
-                                                (tags$a(href="https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx", "https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx")),
-                                                tags$p("And find statistics regarding the literature review here:",
+                                                 #Find the excel literature sources table that connects the source numbers to further source information here:", 
+                                                #(tags$a(href="https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx", "https://github.com/AlexandraKrause/Thesis/blob/main/methods-excel.xlsx")),
+                                                tags$p("Please find statistics regarding the literature review here:",
                                                        tags$a(href="https://github.com/AlexandraKrause/Thesis#readme", "https://github.com/AlexandraKrause/Thesis#readme"))),
                                          
                                          tags$hr(),
