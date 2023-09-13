@@ -5,7 +5,7 @@ account: femiaculture
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6461435
-bundleId: 7666708
+bundleId: 7680889
 url: https://femiaculture.shinyapps.io/femiaculture/
 asMultiple: FALSE
 asStatic: FALSE
